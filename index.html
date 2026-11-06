@@ -1,0 +1,1090 @@
+<!doctype html>
+<html lang="sl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+		<title>ExalyteLive · Napisi in tolmačenje v živo v 85 jezikih</title>
+		<meta
+			name="description"
+			content="ExalyteLive sproti spreminja govor v napise in prevode v 85 jezikih, do štirih hkrati na istem zaslonu. Za konference, seminarje, skupščine in spletne prenose, z moduli izrazja za vsako področje."
+		/>
+		<meta name="theme-color" content="#0b0b0d" />
+		<meta name="color-scheme" content="dark" />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="ExalyteLive" />
+		<meta property="og:locale" content="sl_SI" />
+		<meta property="og:locale:alternate" content="en_GB" />
+		<meta property="og:locale:alternate" content="de_DE" />
+		<meta property="og:locale:alternate" content="fr_FR" />
+		<meta property="og:title" content="ExalyteLive · Vsaka beseda. V vsakem jeziku. V živo." />
+		<meta
+			property="og:description"
+			content="Napisi in tolmačenje v živo v 85 jezikih, do štirih hkrati, z moduli izrazja za vsako področje."
+		/>
+		<meta property="og:image" content="./og-image.jpg" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content="ExalyteLive: Vsaka beseda. V vsakem jeziku. V živo." />
+		<meta name="twitter:card" content="summary_large_image" />
+		<link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+		<link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png" />
+		<link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+		<link rel="manifest" href="./site.webmanifest" />
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "SoftwareApplication",
+				"name": "ExalyteLive",
+				"applicationCategory": "MultimediaApplication",
+				"operatingSystem": "Windows 11",
+				"inLanguage": ["sl", "en", "de", "fr"],
+				"description": "Napisi in tolmačenje v živo v 85 jezikih, do štirih hkrati na istem zaslonu, z moduli izrazja za vsako področje.",
+				"featureList": [
+					"Napisi in prevodi v 85 jezikih",
+					"Do 4 jeziki hkrati na zaslonu",
+					"Moduli izrazja za vsako področje in po meri",
+					"Prosojna plast nad prosojnicami in napisi v Zoomu",
+					"Izvoz prepisa v SRT, WebVTT, Markdown in besedilo"
+				]
+			}
+		</script>
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "FAQPage",
+				"mainEntity": [
+					{
+						"@type": "Question",
+						"name": "V katerih jezikih so lahko napisi?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "V 85 jezikih, do štirih hkrati na istem zaslonu. Govorci lahko govorijo v kateremkoli od teh jezikov in ga med govorom zamenjajo; tolmač jezik zazna sam."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "Kako hitro se pokažejo napisi?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "Govorjeni jezik se izpisuje med govorom. Prevodi sledijo v približno sekundi in se med daljšim stavkom sproti osvežujejo, ob koncu stavka pa jih tolmač dokončno izpili."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "Ali razume strokovne izraze mojega področja?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "Da. Za vsak dogodek pripravimo modul izrazja: opis dogodka, imena govorcev ter izraze in kratice, po želji z obveznim prevodom. Za računovodstvo, davke in revizijo je vgrajen modul z več kot 400 pojmi."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "Ali deluje tudi za hibridne in spletne dogodke?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "Da. Napisi so lahko v prosojni plasti nad prosojnicami, na ločenem zaslonu ali v Zoomovi vrstici napisov. Po dogodku dobite prepis v formatih SRT, WebVTT, Markdown ali besedilo."
+						}
+					}
+				]
+			}
+		</script>
+		<script type="module" crossorigin src="./assets/main-CmtIhXSM.js"></script>
+		<link rel="modulepreload" crossorigin href="./assets/400-DZADBZ-v.js">
+		<link rel="stylesheet" crossorigin href="./assets/400-DL0gVDBb.css">
+		<link rel="stylesheet" crossorigin href="./assets/main-DVCAyn8-.css">
+	</head>
+	<body>
+		<a class="skip-link" href="#main" data-i18n="skip">Preskoči na vsebino</a>
+		<div class="backdrop" aria-hidden="true"></div>
+		<canvas id="morph" aria-hidden="true"></canvas>
+		<div class="grain" aria-hidden="true"></div>
+		<div class="progress" id="progress" aria-hidden="true"></div>
+
+		<header class="nav" id="nav">
+			<div class="container nav__inner">
+				<a class="brand" href="#domov" aria-label="ExalyteLive">
+					<img class="brand__mark" src="./favicon.svg" alt="" width="34" height="34" />
+					<span class="brand__name">Exalyte<span>Live</span></span>
+				</a>
+				<nav class="nav__links" id="nav-links" aria-label="Glavna navigacija" data-i18n-attr="aria-label:nav.label">
+					<a href="#demo" data-i18n="nav.demo">Predogled</a>
+					<a href="#podrocja" data-i18n="nav.fields">Področja</a>
+					<a href="#jeziki" data-i18n="nav.languages">Jeziki</a>
+					<a href="#moduli" data-i18n="nav.modules">Moduli</a>
+					<a href="#paketi" data-i18n="nav.plans">Storitve</a>
+					<a href="#vprasanja" data-i18n="nav.faq">Vprašanja</a>
+					<button class="motion-toggle motion-toggle--menu" type="button" data-motion-toggle>
+						<svg class="motion-toggle__icon motion-toggle__icon--pause" viewBox="0 0 24 24" aria-hidden="true">
+							<path d="M9 6v12M15 6v12" /></svg
+						><svg class="motion-toggle__icon motion-toggle__icon--play" viewBox="0 0 24 24" aria-hidden="true">
+							<path d="M8 5.5v13l10.5-6.5L8 5.5Z" />
+						</svg>
+						<span class="motion-toggle__label">Ustavi animacije</span>
+					</button>
+				</nav>
+				<div class="nav__actions">
+					<button class="motion-toggle motion-toggle--nav" type="button" data-motion-toggle>
+						<svg class="motion-toggle__icon motion-toggle__icon--pause" viewBox="0 0 24 24" aria-hidden="true">
+							<path d="M9 6v12M15 6v12" /></svg
+						><svg class="motion-toggle__icon motion-toggle__icon--play" viewBox="0 0 24 24" aria-hidden="true">
+							<path d="M8 5.5v13l10.5-6.5L8 5.5Z" />
+						</svg>
+						<span class="motion-toggle__label">Ustavi animacije</span>
+					</button>
+					<div class="lang-switch" role="group" aria-label="Jezik strani" data-i18n-attr="aria-label:nav.langLabel">
+						<button type="button" data-lang="sl" aria-pressed="true">SL</button>
+						<button type="button" data-lang="en" aria-pressed="false">EN</button>
+						<button type="button" data-lang="de" aria-pressed="false">DE</button>
+						<button type="button" data-lang="fr" aria-pressed="false">FR</button>
+					</div>
+					<a class="btn btn--primary btn--sm nav__cta" href="#povprasevanje" data-i18n="nav.cta">Povpraševanje</a>
+					<button
+						class="nav__toggle"
+						type="button"
+						aria-controls="nav-links"
+						aria-expanded="false"
+						aria-label="Odpri meni"
+						data-i18n-attr="aria-label:nav.menu"
+					>
+						<span></span><span></span>
+					</button>
+				</div>
+			</div>
+		</header>
+
+		<nav class="dots" id="dots" aria-label="Razdelki strani" data-i18n-attr="aria-label:nav.sections">
+			<ol>
+				<li>
+					<a href="#domov"><span class="dots__label" data-i18n="nav.home">Domov</span></a>
+				</li>
+				<li>
+					<a href="#demo"><span class="dots__label" data-i18n="nav.demo">Predogled</span></a>
+				</li>
+				<li>
+					<a href="#kako"><span class="dots__label" data-i18n="how.kicker">Kako deluje</span></a>
+				</li>
+				<li>
+					<a href="#podrocja"><span class="dots__label" data-i18n="nav.fields">Področja</span></a>
+				</li>
+				<li>
+					<a href="#jeziki"><span class="dots__label" data-i18n="nav.languages">Jeziki</span></a>
+				</li>
+				<li>
+					<a href="#moduli"><span class="dots__label" data-i18n="nav.modules">Moduli</span></a>
+				</li>
+				<li>
+					<a href="#paketi"><span class="dots__label" data-i18n="nav.plans">Storitve</span></a>
+				</li>
+				<li>
+					<a href="#vprasanja"><span class="dots__label" data-i18n="nav.faq">Vprašanja</span></a>
+				</li>
+				<li>
+					<a href="#povprasevanje"><span class="dots__label" data-i18n="nav.cta">Povpraševanje</span></a>
+				</li>
+			</ol>
+		</nav>
+
+		<main id="main">
+			<!-- HERO ------------------------------------------------------------------------------>
+			<section
+				class="hero"
+				id="domov"
+				data-shape="0"
+				data-side="right"
+				data-col="0.8"
+				data-col-width="0.42"
+				data-m-y="0.5"
+				data-m-scale="0.5"
+			>
+				<div class="container hero__grid">
+					<div class="hero__copy">
+						<p class="eyebrow reveal">
+							<span class="live-dot" aria-hidden="true"></span>
+							<span data-i18n="hero.eyebrow">Napisi in tolmačenje v živo</span>
+						</p>
+						<h1 class="hero__title reveal" data-i18n-html="hero.title">
+							Vsaka beseda.<br /><span class="grad">V vsakem jeziku.</span><br />V živo.
+						</h1>
+						<p class="rotator reveal" id="rotator" aria-hidden="true">
+							<b class="rotator__code">EN</b><span class="rotator__text">Every word, in every language.</span>
+						</p>
+						<p class="hero__lead reveal" data-i18n="hero.lead">
+							ExalyteLive sproti spreminja govor v napise in prevode v 85 jezikih, do štirih hkrati na istem zaslonu. Za
+							konference, kongrese, seminarje, skupščine, predavanja in spletne prenose, z izrazjem vašega področja.
+						</p>
+						<div class="hero__ctas reveal">
+							<a class="btn btn--primary" href="#povprasevanje" data-i18n="hero.cta">Pošlji povpraševanje</a>
+							<a class="btn btn--ghost" href="#demo" data-i18n="hero.secondary">Poglej, kako je videti</a>
+						</div>
+						<ul class="hero__chips reveal" aria-label="Ključne lastnosti" data-i18n-attr="aria-label:hero.chipsLabel">
+							<li><b>85</b> <span data-i18n="hero.chip1">jezikov</span></li>
+							<li><b>4</b> <span data-i18n="hero.chip2">jeziki hkrati</span></li>
+							<li><b>≈ 1 s</b> <span data-i18n="hero.chip3">do prevoda</span></li>
+							<li><span data-i18n="hero.chip4">Moduli za vsako področje</span></li>
+						</ul>
+					</div>
+					<!-- Shown only without WebGL: a CSS take on the 3D orb. -->
+					<div class="hero__fallback" aria-hidden="true">
+						<div class="orb">
+							<span class="orb__ring"></span><span class="orb__ring orb__ring--b"></span><span class="orb__core"></span>
+						</div>
+					</div>
+				</div>
+				<a class="scroll-cue" href="#demo" aria-label="Naprej" data-i18n-attr="aria-label:hero.scroll">
+					<span></span>
+				</a>
+			</section>
+
+			<!-- DEMO ------------------------------------------------------------------------------>
+			<section class="section demo" id="demo" data-shape="1" data-side="center">
+				<div class="container">
+					<header class="section__head section__head--center reveal">
+						<p class="kicker" data-i18n="demo.kicker">Predogled</p>
+						<h2 data-i18n="demo.title">Tako vidi dvorana</h2>
+						<p data-i18n="demo.lead">
+							Govorjeni jezik se izpisuje sproti, prevodi mu sledijo v približno sekundi. Ko govorec konča stavek,
+							tolmač popravi napačno slišane izraze in vrstice izpili. Kardiologija, tehnologija, pravo ali letna
+							skupščina: tolmač se prilagodi temi in jezikom.
+						</p>
+					</header>
+
+					<p class="sr-only" data-i18n="demo.sr">
+						Primer napisov: govor se sproti izpisuje v svojem jeziku, pod njim pa se pojavljajo prevodi v tri druge
+						jezike.
+					</p>
+					<div class="demo-langs reveal" id="demo-langs" role="group" aria-labelledby="demo-langs-label">
+						<p class="demo-langs__label" id="demo-langs-label" data-i18n="demo.pick">
+							Izberite do tri jezike prevodov:
+						</p>
+						<div class="demo-langs__list"></div>
+						<p class="demo-langs__note" data-i18n="demo.pickNote">
+							V predogledu je 10 jezikov, ExalyteLive jih zna 85.
+						</p>
+					</div>
+					<div class="stage reveal" id="stage">
+						<div class="stage__bezel">
+							<div class="stage__screen">
+								<div class="stage__aura" aria-hidden="true"><span></span><span></span></div>
+								<div class="slide" aria-hidden="true">
+									<p class="slide__kicker">Kardiološki kongres · Dvorana B</p>
+									<p class="slide__title">Nove smernice za zdravljenje srčnega popuščanja</p>
+									<div class="slide__bars">
+										<span style="--h: 42%"></span><span style="--h: 64%"></span><span style="--h: 55%"></span
+										><span style="--h: 78%"></span><span style="--h: 70%"></span><span style="--h: 92%"></span>
+									</div>
+								</div>
+								<div class="captions" aria-hidden="true">
+									<div class="lane" data-tone="white">
+										<span class="lane__chip">SL</span>
+										<p class="lane__text"></p>
+									</div>
+									<div class="lane" data-tone="cyan">
+										<span class="lane__chip">EN</span>
+										<p class="lane__text"></p>
+									</div>
+									<div class="lane" data-tone="green">
+										<span class="lane__chip">DE</span>
+										<p class="lane__text"></p>
+									</div>
+									<div class="lane" data-tone="amber">
+										<span class="lane__chip">HR</span>
+										<p class="lane__text"></p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="stage__meta">
+							<span class="badge badge--live"
+								><span class="live-dot" aria-hidden="true"></span><span data-i18n="demo.live">V živo</span></span
+							>
+							<span data-i18n="demo.meta1">Prosojna plast nad prosojnicami</span>
+							<span data-i18n="demo.meta2">Prozorne besede: napoved naslednjih besed</span>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- HOW ------------------------------------------------------------------------------->
+			<section class="section how" id="kako">
+				<div class="container split split--story">
+					<div class="split__copy">
+						<header class="section__head reveal">
+							<p class="kicker" data-i18n="how.kicker">Kako deluje</p>
+							<h2 data-i18n="how.title">Od glasu do štirih vrstic napisov</h2>
+							<p data-i18n="how.lead">
+								En prepis, več jezikov: vsi prevodi nastanejo iz istega stavka, zato so med seboj usklajeni, dodatni
+								jeziki pa strošek komaj povečajo.
+							</p>
+						</header>
+						<ol class="steps" id="steps">
+							<li class="step-wrap" data-shape="1" data-side="right">
+								<div class="step glass reveal">
+									<span class="step__num">01</span>
+									<div>
+										<h3 data-i18n="how.s1.title">Zvok iz dvorane in s spleta</h3>
+										<p data-i18n="how.s1.text">
+											Mikrofon v dvorani, sistemski zvok računalnika ali zvok ene same aplikacije, na primer Zooma.
+											Napisi ločijo govorca v dvorani od govorca na daljavo.
+										</p>
+									</div>
+								</div>
+							</li>
+							<li class="step-wrap" data-shape="0" data-side="right">
+								<div class="step glass reveal">
+									<span class="step__num">02</span>
+									<div>
+										<h3 data-i18n="how.s2.title">Prepis, ki razume temo</h3>
+										<p data-i18n="how.s2.text">
+											Model za govor piše sproti in pozna opis dogodka, imena govorcev ter izraze iz modula. Ob premoru
+											popravi napačno slišane besede in odstrani mašila.
+										</p>
+									</div>
+								</div>
+							</li>
+							<li class="step-wrap" data-shape="2" data-side="right">
+								<div class="step glass reveal">
+									<span class="step__num">03</span>
+									<div>
+										<h3 data-i18n="how.s3.title">Do štirje jeziki naenkrat</h3>
+										<p data-i18n="how.s3.text">
+											Iz istega prepisa nastanejo napisi v do štirih jezikih: v prosojni plasti nad prosojnicami, na
+											projektorju, LED steni ali v Zoomovi vrstici napisov.
+										</p>
+									</div>
+								</div>
+							</li>
+						</ol>
+					</div>
+					<div class="split__visual" aria-hidden="true"></div>
+				</div>
+			</section>
+
+			<!-- FIELDS (terminology modules) ------------------------------------------------------>
+			<section class="section fields" id="podrocja" data-shape="3" data-side="center">
+				<div class="container">
+					<header class="section__head section__head--center reveal">
+						<p class="kicker" data-i18n="fields.kicker">Moduli izrazja</p>
+						<h2 data-i18n="fields.title">Modul za vsako področje</h2>
+						<p data-i18n="fields.lead">
+							Modul izrazja pove tolmaču, katere besede bo slišal in kako jih prevesti. Računovodski modul je vgrajen,
+							za vsako drugo področje ga pripravimo iz programa vašega dogodka ali pa ga sestavite sami.
+						</p>
+					</header>
+				</div>
+				<div class="marquee reveal" id="marquee" aria-hidden="true"></div>
+				<div class="container">
+					<div class="fields__grid">
+						<article class="field-card glass tilt reveal" style="--c: var(--amber)">
+							<span class="tag tag--accent" data-i18n="fields.builtIn">Vgrajeno</span>
+							<h3 data-i18n="fields.f1.title">Računovodstvo, davki in revizija</h3>
+							<p data-i18n="fields.f1.text">
+								Več kot 400 pojmov v slovenščini, angleščini, hrvaščini in srbščini: izkazi, MSRP, DDV, revizijska
+								mnenja, ESRS ter ustanove regije.
+							</p>
+						</article>
+						<article class="field-card glass tilt reveal" style="--c: var(--red)">
+							<span class="tag" data-i18n="fields.prepared">Pripravimo</span>
+							<h3 data-i18n="fields.f2.title">Medicina in farmacija</h3>
+							<p data-i18n="fields.f2.text">
+								Diagnoze, zdravila, postopki in imena predavateljev za kongrese in strokovna srečanja.
+							</p>
+						</article>
+						<article class="field-card glass tilt reveal" style="--c: var(--violet)">
+							<span class="tag" data-i18n="fields.prepared">Pripravimo</span>
+							<h3 data-i18n="fields.f3.title">Pravo in javna uprava</h3>
+							<p data-i18n="fields.f3.text">
+								Predpisi, institucije in pravni izrazi za posvete, seje in izobraževanja.
+							</p>
+						</article>
+						<article class="field-card glass tilt reveal" style="--c: var(--cyan)">
+							<span class="tag" data-i18n="fields.prepared">Pripravimo</span>
+							<h3 data-i18n="fields.f4.title">Tehnologija in IT</h3>
+							<p data-i18n="fields.f4.text">
+								Izdelki, kratice in angleški izrazi, ki jih govorci vpletajo v vsak jezik.
+							</p>
+						</article>
+						<article class="field-card glass tilt reveal" style="--c: var(--green)">
+							<span class="tag" data-i18n="fields.prepared">Pripravimo</span>
+							<h3 data-i18n="fields.f5.title">Finance in bančništvo</h3>
+							<p data-i18n="fields.f5.text">
+								Trgi, instrumenti in regulativa za finančne konference in predstavitve vlagateljem.
+							</p>
+						</article>
+						<article class="field-card glass tilt reveal" style="--c: var(--amber)">
+							<span class="tag" data-i18n="fields.prepared">Pripravimo</span>
+							<h3 data-i18n="fields.f6.title">Industrija, energetika in inženiring</h3>
+							<p data-i18n="fields.f6.text">
+								Tehnični izrazi, standardi in imena izdelkov za sejme in strokovne dneve.
+							</p>
+						</article>
+						<article class="field-card glass tilt reveal" style="--c: var(--cyan)">
+							<span class="tag" data-i18n="fields.prepared">Pripravimo</span>
+							<h3 data-i18n="fields.f7.title">Znanost in izobraževanje</h3>
+							<p data-i18n="fields.f7.text">Predavanja, simpoziji, zagovori in mednarodni študijski programi.</p>
+						</article>
+						<article class="field-card glass tilt reveal" style="--c: var(--violet)">
+							<span class="tag" data-i18n="fields.prepared">Pripravimo</span>
+							<h3 data-i18n="fields.f8.title">Poslovni in korporativni dogodki</h3>
+							<p data-i18n="fields.f8.text">Skupščine, letne konference, lansiranja izdelkov in interni dogodki.</p>
+						</article>
+						<article class="field-card field-card--custom glass tilt reveal" style="--c: var(--accent)">
+							<span class="tag tag--accent" data-i18n="fields.yours">Vaš modul</span>
+							<h3 data-i18n="fields.f9.title">Po meri</h3>
+							<p data-i18n-html="fields.f9.text">
+								Vaši izrazi, kratice ter imena govorcev in izdelkov, po želji z obveznim prevodom:
+								<code>terjatve = receivables</code>.
+							</p>
+						</article>
+					</div>
+					<p class="fields__note reveal" data-i18n="fields.note">
+						Vsak modul združi opis dogodka in do 100 izrazov z izbirnim prevodom. Tolmač ga upošteva pri prepisu in pri
+						vseh prevodih hkrati.
+					</p>
+				</div>
+			</section>
+
+			<!-- LANGUAGES ------------------------------------------------------------------------->
+			<section class="section languages" id="jeziki" data-shape="4" data-side="right">
+				<div class="container split">
+					<div class="split__copy">
+						<header class="section__head reveal">
+							<p class="kicker" data-i18n="langs.kicker">Jeziki</p>
+							<h2 data-i18n="langs.title">85 jezikov. Do štirje hkrati.</h2>
+							<p data-i18n="langs.lead">
+								Govorci lahko govorijo v kateremkoli jeziku in ga sredi predavanja tudi zamenjajo. Dvorana bere v
+								jeziku, ki ga izberete, ali v do štirih jezikih hkrati. Arabščina, hebrejščina in drugi jeziki, ki se
+								pišejo z desne, se tako tudi prikažejo.
+							</p>
+						</header>
+						<ul
+							class="lang-cloud reveal"
+							aria-label="Nekateri podprti jeziki"
+							data-i18n-attr="aria-label:langs.cloudLabel"
+						>
+							<li lang="sl">Slovenščina</li>
+							<li lang="en">English</li>
+							<li lang="de">Deutsch</li>
+							<li lang="it">Italiano</li>
+							<li lang="fr">Français</li>
+							<li lang="es">Español</li>
+							<li lang="pt">Português</li>
+							<li lang="hr">Hrvatski</li>
+							<li lang="sr">Srpski</li>
+							<li lang="bs">Bosanski</li>
+							<li lang="mk">Македонски</li>
+							<li lang="bg">Български</li>
+							<li lang="cs">Čeština</li>
+							<li lang="sk">Slovenčina</li>
+							<li lang="pl">Polski</li>
+							<li lang="hu">Magyar</li>
+							<li lang="ro">Română</li>
+							<li lang="uk">Українська</li>
+							<li lang="el">Ελληνικά</li>
+							<li lang="tr">Türkçe</li>
+							<li lang="nl">Nederlands</li>
+							<li lang="sv">Svenska</li>
+							<li lang="fi">Suomi</li>
+							<li lang="ar" dir="rtl">العربية</li>
+							<li lang="he" dir="rtl">עברית</li>
+							<li lang="hi">हिन्दी</li>
+							<li lang="zh">中文</li>
+							<li lang="ja">日本語</li>
+							<li lang="ko">한국어</li>
+							<li class="lang-cloud__more" data-i18n="langs.more">+ 56 drugih</li>
+						</ul>
+						<div class="presets">
+							<div class="preset glass reveal">
+								<h3 data-i18n="langs.p1.title">Ena dvorana, en jezik</h3>
+								<p data-i18n="langs.p1.text">Govorci v kateremkoli jeziku, dvorana bere eno vrstico v svojem jeziku.</p>
+							</div>
+							<div class="preset glass reveal">
+								<h3 data-i18n="langs.p2.title">Štirje jeziki</h3>
+								<p data-i18n="langs.p2.text">Do štiri vrstice hkrati za mednarodno publiko.</p>
+							</div>
+							<div class="preset glass reveal">
+								<h3 data-i18n="langs.p3.title">Dvojezični dogodek</h3>
+								<p data-i18n="langs.p3.text">Smer prevoda zamenjate z eno tipko (F2), ko se zamenja govorec.</p>
+							</div>
+							<div class="preset glass reveal">
+								<h3 data-i18n="langs.p4.title">Podnapisi brez prevoda</h3>
+								<p data-i18n="langs.p4.text">Zapis govora v istem jeziku, z lokalnim pogonom tudi brez interneta.</p>
+							</div>
+						</div>
+					</div>
+					<div class="split__visual" aria-hidden="true"></div>
+				</div>
+			</section>
+
+			<!-- APP MODULES ----------------------------------------------------------------------->
+			<section class="section modules" id="moduli" data-shape="7" data-side="center">
+				<div class="container">
+					<header class="section__head section__head--center reveal">
+						<p class="kicker" data-i18n="modules.kicker">Moduli aplikacije</p>
+						<h2 data-i18n="modules.title">Vse, kar potrebuje operater</h2>
+						<p data-i18n="modules.lead">
+							ExalyteLive je studio za napise v živo: od zvoka v dvorani do prepisa po dogodku, z orodji, ki jih
+							operater potrebuje med prenosom.
+						</p>
+					</header>
+					<div class="modules__grid">
+						<article class="module glass tilt reveal" style="--c: var(--accent)">
+							<div class="module__icon">
+								<svg viewBox="0 0 24 24">
+									<path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z" />
+									<path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" />
+								</svg>
+							</div>
+							<h3 data-i18n="modules.m1.title">Tolmač</h3>
+							<p data-i18n="modules.m1.text">
+								Prepis in prevod v vse jezike napisov v enem koraku, z nivoji Hitro, Skrbno, Največji in Ultra.
+							</p>
+						</article>
+						<article class="module glass tilt reveal" style="--c: var(--cyan)">
+							<div class="module__icon">
+								<svg viewBox="0 0 24 24">
+									<rect x="3" y="4" width="18" height="7" rx="2" />
+									<rect x="3" y="13" width="18" height="7" rx="2" />
+									<path d="M7 7.5h.01M7 16.5h.01" />
+								</svg>
+							</div>
+							<h3 data-i18n="modules.m2.title">Več pogonov</h3>
+							<p data-i18n="modules.m2.text">
+								Gemini, OpenAI Realtime, Mistral Voxtral ali lokalni Whisper, ki deluje brez interneta.
+							</p>
+						</article>
+						<article class="module glass tilt reveal" style="--c: var(--green)">
+							<div class="module__icon">
+								<svg viewBox="0 0 24 24">
+									<rect x="9" y="3" width="6" height="11" rx="3" />
+									<path d="M5 11a7 7 0 0 0 14 0M12 18v3" />
+								</svg>
+							</div>
+							<h3 data-i18n="modules.m3.title">Viri zvoka</h3>
+							<p data-i18n="modules.m3.text">
+								Mikrofon, sistemski zvok ali ena aplikacija, z merilnikom nivoja in obnovitvijo, ko naprava odpove.
+							</p>
+						</article>
+						<article class="module glass tilt reveal" style="--c: var(--amber)">
+							<div class="module__icon">
+								<svg viewBox="0 0 24 24"><path d="M4 5h16M4 12h10M4 19h13" /></svg>
+							</div>
+							<h3 data-i18n="modules.m4.title">Moduli izrazja</h3>
+							<p data-i18n="modules.m4.text">Opis dogodka, imena in izrazi, po želji z obveznim prevodom.</p>
+						</article>
+						<article class="module glass tilt reveal" style="--c: var(--violet)">
+							<div class="module__icon">
+								<svg viewBox="0 0 24 24"><path d="M4 12h7M15 12h1M19 12h1M4 6h16M4 18h10" /></svg>
+							</div>
+							<h3 data-i18n="modules.m5.title">Napoved naslednjih besed</h3>
+							<p data-i18n="modules.m5.text">
+								Za kurzorjem prozorne besede, ki bodo verjetno sledile; ko jih govorec izreče, jih zamenja pravo
+								besedilo.
+							</p>
+						</article>
+						<article class="module glass tilt reveal" style="--c: var(--red)">
+							<div class="module__icon">
+								<svg viewBox="0 0 24 24">
+									<path d="M4 12h16" />
+									<path d="M7 8c1 1 1 7 0 8M17 8c-1 1-1 7 0 8" />
+								</svg>
+							</div>
+							<h3 data-i18n="modules.m6.title">Brez mašil</h3>
+							<p data-i18n="modules.m6.text">Eee, mmm in podobna mašila izginejo z zaslona; seznam uredite sami.</p>
+						</article>
+						<article class="module glass tilt reveal" style="--c: var(--cyan)">
+							<div class="module__icon">
+								<svg viewBox="0 0 24 24">
+									<rect x="3" y="4" width="18" height="12" rx="2" />
+									<path d="M6 13h8M8 20h8" />
+								</svg>
+							</div>
+							<h3 data-i18n="modules.m7.title">Prosojna plast</h3>
+							<p data-i18n="modules.m7.text">
+								Vedno na vrhu, premikanje s puščicami, pripenjanje na dno zaslona in zaklep.
+							</p>
+						</article>
+						<article class="module glass tilt reveal" style="--c: var(--accent)">
+							<div class="module__icon">
+								<svg viewBox="0 0 24 24">
+									<path d="M4 20h4L18.5 9.5a2.1 2.1 0 0 0-3-3L5 17v3Z" />
+									<path d="m13.5 8.5 3 3" />
+								</svg>
+							</div>
+							<h3 data-i18n="modules.m8.title">Videz napisov</h3>
+							<p data-i18n="modules.m8.text">
+								Velikost, postavitev, barve in ozadje s preverjanjem kontrasta ter prednastavitve za veliko dvorano.
+							</p>
+						</article>
+						<article class="module glass tilt reveal" style="--c: var(--green)">
+							<div class="module__icon">
+								<svg viewBox="0 0 24 24">
+									<path d="M4 8h16M4 14h11" />
+									<path d="M4 19h7" opacity=".5" />
+								</svg>
+							</div>
+							<h3 data-i18n="modules.m9.title">Izvirnik pod prevodom</h3>
+							<p data-i18n="modules.m9.text">Po želji manjša vrstica z izvirnim govorom pod vsakim prevodom.</p>
+						</article>
+						<article class="module glass tilt reveal" style="--c: var(--cyan)">
+							<div class="module__icon">
+								<svg viewBox="0 0 24 24">
+									<rect x="3" y="6" width="13" height="12" rx="2" />
+									<path d="m16 10 5-3v10l-5-3" />
+								</svg>
+							</div>
+							<h3 data-i18n="modules.m10.title">Zoom</h3>
+							<p data-i18n="modules.m10.text">Napisi v Zoomovi vrstici napisov, tudi brez lokalne plasti.</p>
+						</article>
+						<article class="module glass tilt reveal" style="--c: var(--violet)">
+							<div class="module__icon">
+								<svg viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4V3Z" /></svg>
+							</div>
+							<h3 data-i18n="modules.m11.title">Profili dogodkov</h3>
+							<p data-i18n="modules.m11.text">
+								Nastavitve, videz in položaj plasti shranite in jih naložite z enim klikom.
+							</p>
+						</article>
+						<article class="module glass tilt reveal" style="--c: var(--green)">
+							<div class="module__icon">
+								<svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6" /></svg>
+							</div>
+							<h3 data-i18n="modules.m12.title">Preverjanje pred začetkom</h3>
+							<p data-i18n="modules.m12.text">Preizkus zvoka in položaja plasti, ocena stroška in vaja s posnetkom.</p>
+						</article>
+						<article class="module glass tilt reveal" style="--c: var(--amber)">
+							<div class="module__icon">
+								<svg viewBox="0 0 24 24">
+									<path d="M7 3h7l5 5v13H7z" />
+									<path d="M14 3v5h5M10 13h6M10 17h6" />
+								</svg>
+							</div>
+							<h3 data-i18n="modules.m13.title">Prepis in izvoz</h3>
+							<p data-i18n="modules.m13.text">
+								Markdown, besedilo, SRT ali WebVTT, z obnovitvijo neshranjenih vrstic po sesutju.
+							</p>
+						</article>
+						<article class="module glass tilt reveal" style="--c: var(--cyan)">
+							<div class="module__icon">
+								<svg viewBox="0 0 24 24">
+									<path d="M12 7v5l3 2" />
+									<path d="M3.5 12a8.5 8.5 0 1 0 2.5-6L3.5 8.5" />
+									<path d="M3.5 4v4.5H8" />
+								</svg>
+							</div>
+							<h3 data-i18n="modules.m14.title">Zgodovina</h3>
+							<p data-i18n="modules.m14.text">Neobvezna in brez zvoka: iskanje, filtri po datumu in jeziku, izvoz.</p>
+						</article>
+						<article class="module glass tilt reveal" style="--c: var(--accent)">
+							<div class="module__icon">
+								<svg viewBox="0 0 24 24">
+									<rect x="2.5" y="6" width="19" height="12" rx="2" />
+									<path d="M6 10h.01M9 10h.01M12 10h.01M15 10h.01M18 10h.01M7 14h10" />
+								</svg>
+							</div>
+							<h3 data-i18n="modules.m15.title">Bližnjice in premor</h3>
+							<p data-i18n="modules.m15.text">
+								Začetek, premor, plast in velikost napisov s tipkovnico; med premorom se nič ne zaračuna.
+							</p>
+						</article>
+						<article class="module glass tilt reveal" style="--c: var(--red)">
+							<div class="module__icon">
+								<svg viewBox="0 0 24 24">
+									<rect x="5" y="10" width="14" height="10" rx="2" />
+									<path d="M8 10V7a4 4 0 0 1 8 0v3" />
+								</svg>
+							</div>
+							<h3 data-i18n="modules.m16.title">Zasebnost</h3>
+							<p data-i18n="modules.m16.text">
+								Brez telemetrije, ključi v upravitelju poverilnic Windows, vmesnik v SL, EN, DE in FR.
+							</p>
+						</article>
+					</div>
+				</div>
+			</section>
+
+			<!-- PLANS ----------------------------------------------------------------------------->
+			<section class="section plans" id="paketi" data-shape="5" data-side="center">
+				<div class="container">
+					<div class="stats reveal" id="stats">
+						<div class="stat">
+							<b data-count="85">85</b>
+							<span data-i18n="stats.s1">jezikov napisov</span>
+						</div>
+						<div class="stat">
+							<b data-count="4">4</b>
+							<span data-i18n="stats.s2">jeziki hkrati na zaslonu</span>
+						</div>
+						<div class="stat">
+							<b data-count="1" data-prefix="≈ " data-suffix=" s">≈ 1 s</b>
+							<span data-i18n="stats.s3">do prevoda</span>
+						</div>
+						<div class="stat">
+							<b data-count="0">0</b>
+							<span data-i18n="stats.s4">telemetrije</span>
+						</div>
+					</div>
+
+					<header class="section__head section__head--center reveal">
+						<p class="kicker" data-i18n="plans.kicker">Storitve</p>
+						<h2 data-i18n="plans.title">Izberite, kako sodelujemo</h2>
+						<p data-i18n="plans.lead">
+							Vsak dogodek je drugačen: tema, število dvoran, jezikov in dni. Pošljite povpraševanje in pripravimo
+							ponudbo po meri.
+						</p>
+					</header>
+
+					<div class="plans__grid">
+						<article class="plan glass tilt reveal">
+							<p class="plan__tag" data-i18n="plans.p1.tag">Najpogostejše</p>
+							<h3 data-i18n="plans.p1.title">Dogodek na ključ</h3>
+							<p class="plan__desc" data-i18n="plans.p1.desc">
+								Pripeljemo opremo in operaterja ter skrbimo za napise ves dogodek.
+							</p>
+							<ul>
+								<li data-i18n="plans.p1.i1">Modul izrazja za temo vašega dogodka</li>
+								<li data-i18n="plans.p1.i2">Priklop na zvok in projektor v dvorani</li>
+								<li data-i18n="plans.p1.i3">Do 4 jeziki napisov, tudi v Zoomu</li>
+								<li data-i18n="plans.p1.i4">Prepis po dogodku (SRT, WebVTT, besedilo)</li>
+							</ul>
+							<p class="plan__price" data-i18n="plans.price">Cena po povpraševanju</p>
+							<a class="btn btn--primary" href="#povprasevanje" data-plan="event" data-i18n="plans.cta"
+								>Pošlji povpraševanje</a
+							>
+						</article>
+						<article class="plan glass tilt reveal">
+							<p class="plan__tag plan__tag--muted" data-i18n="plans.p2.tag">Za organizatorje</p>
+							<h3 data-i18n="plans.p2.title">Licenca za vašo ekipo</h3>
+							<p class="plan__desc" data-i18n="plans.p2.desc">
+								ExalyteLive na vaših računalnikih, za dogodke, ki jih vodite sami.
+							</p>
+							<ul>
+								<li data-i18n="plans.p2.i1">Namestitev in nastavitev na Windows 11</li>
+								<li data-i18n="plans.p2.i2">Uvajanje vaših tehnikov</li>
+								<li data-i18n="plans.p2.i3">Moduli izrazja za vaša področja</li>
+								<li data-i18n="plans.p2.i4">Posodobitve in podpora</li>
+							</ul>
+							<p class="plan__price" data-i18n="plans.price">Cena po povpraševanju</p>
+							<a class="btn btn--ghost" href="#povprasevanje" data-plan="license" data-i18n="plans.cta"
+								>Pošlji povpraševanje</a
+							>
+						</article>
+						<article class="plan glass tilt reveal">
+							<p class="plan__tag plan__tag--muted" data-i18n="plans.p3.tag">Večji dogodki</p>
+							<h3 data-i18n="plans.p3.title">Po meri</h3>
+							<p class="plan__desc" data-i18n="plans.p3.desc">
+								Več dvoran, več dni ali posebne zahteve glede jezikov in prikaza.
+							</p>
+							<ul>
+								<li data-i18n="plans.p3.i1">Več dvoran in virov zvoka hkrati</li>
+								<li data-i18n="plans.p3.i2">Lastni moduli in jezikovni pari</li>
+								<li data-i18n="plans.p3.i3">Napisi v vaši celostni podobi</li>
+								<li data-i18n="plans.p3.i4">Priprava in vaja pred dogodkom</li>
+							</ul>
+							<p class="plan__price" data-i18n="plans.price">Cena po povpraševanju</p>
+							<a class="btn btn--ghost" href="#povprasevanje" data-plan="custom" data-i18n="plans.cta"
+								>Pošlji povpraševanje</a
+							>
+						</article>
+					</div>
+
+					<div class="audience reveal">
+						<p class="kicker" data-i18n="audience.kicker">Za koga</p>
+						<ul>
+							<li data-i18n="audience.a1">Konference in kongresi</li>
+							<li data-i18n="audience.a2">Strokovni posveti in seminarji</li>
+							<li data-i18n="audience.a3">Skupščine in korporativni dogodki</li>
+							<li data-i18n="audience.a4">Hibridni dogodki in spletni seminarji</li>
+							<li data-i18n="audience.a5">Predavanja in akademije</li>
+							<li data-i18n="audience.a6">Javna uprava in občine</li>
+							<li data-i18n="audience.a7">Sejmi in predstavitve izdelkov</li>
+							<li data-i18n="audience.a8">Kulturni in družabni dogodki</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<!-- FAQ ------------------------------------------------------------------------------->
+			<section class="section faq" id="vprasanja" data-shape="5" data-side="center">
+				<div class="container container--narrow">
+					<header class="section__head section__head--center reveal">
+						<p class="kicker" data-i18n="faq.kicker">Vprašanja</p>
+						<h2 data-i18n="faq.title">Pogosta vprašanja</h2>
+					</header>
+					<div class="faq__list">
+						<details class="qa glass reveal">
+							<summary data-i18n="faq.q1">V katerih jezikih so lahko napisi?</summary>
+							<p data-i18n="faq.a1">
+								V 85 jezikih, do štirih hkrati na istem zaslonu. Govorci lahko govorijo v kateremkoli od teh jezikov in
+								ga med govorom zamenjajo; tolmač jezik zazna sam.
+							</p>
+						</details>
+						<details class="qa glass reveal">
+							<summary data-i18n="faq.q2">Kako hitro se pokažejo napisi?</summary>
+							<p data-i18n="faq.a2">
+								Govorjeni jezik se izpisuje med govorom. Prevodi sledijo v približno sekundi in se med daljšim stavkom
+								sproti osvežujejo, ob koncu stavka pa jih tolmač dokončno izpili.
+							</p>
+						</details>
+						<details class="qa glass reveal">
+							<summary data-i18n="faq.q3">Ali razume strokovne izraze mojega področja?</summary>
+							<p data-i18n="faq.a3">
+								Da. Za vsak dogodek pripravimo modul izrazja: opis dogodka, imena govorcev ter izraze in kratice, po
+								želji z obveznim prevodom. Za računovodstvo, davke in revizijo je vgrajen modul z več kot 400 pojmi.
+							</p>
+						</details>
+						<details class="qa glass reveal">
+							<summary data-i18n="faq.q4">Kaj potrebujemo na dogodku?</summary>
+							<p data-i18n="faq.a4">
+								Vir zvoka (mešalna miza ali mikrofon), zaslon ali projektor za napise in stabilno internetno povezavo.
+								Pri dogodku na ključ pripeljemo računalnik in operaterja.
+							</p>
+						</details>
+						<details class="qa glass reveal">
+							<summary data-i18n="faq.q5">Ali deluje tudi za hibridne in spletne dogodke?</summary>
+							<p data-i18n="faq.a5">
+								Da. Napisi so lahko v prosojni plasti nad prosojnicami, na ločenem zaslonu ali v Zoomovi vrstici
+								napisov. Po dogodku dobite prepis v formatih SRT, WebVTT, Markdown ali besedilo.
+							</p>
+						</details>
+						<details class="qa glass reveal">
+							<summary data-i18n="faq.q6">Ali lahko napise prikažemo v naši celostni podobi?</summary>
+							<p data-i18n="faq.a6">
+								Da. Velikost, postavitev, barve, ozadje in položaj napisov prilagodimo dvorani in vaši podobi,
+								nastavitve pa shranimo v profil dogodka.
+							</p>
+						</details>
+						<details class="qa glass reveal">
+							<summary data-i18n="faq.q7">Kaj pa zasebnost govorcev?</summary>
+							<p data-i18n="faq.a7">
+								Zvok gre samo do pogona, ki ga izberete, aplikacija ne zbira telemetrije, zgodovina sej pa je privzeto
+								izklopljena in nikoli ne vsebuje zvoka. Za najstrožje zahteve je na voljo lokalni pogon, pri katerem
+								zvok ostane na računalniku.
+							</p>
+						</details>
+						<details class="qa glass reveal">
+							<summary data-i18n="faq.q8">Koliko stane?</summary>
+							<p data-i18n="faq.a8">
+								Cena je odvisna od trajanja dogodka, števila dvoran in jezikov ter od tega, ali želite operaterja.
+								Pošljite povpraševanje in pripravimo ponudbo po meri.
+							</p>
+						</details>
+					</div>
+				</div>
+			</section>
+
+			<!-- CONTACT --------------------------------------------------------------------------->
+			<section
+				class="section contact"
+				id="povprasevanje"
+				data-shape="6"
+				data-side="right"
+				data-col="0.82"
+				data-col-width="0.34"
+			>
+				<div class="container split split--contact">
+					<div class="split__copy">
+						<header class="section__head reveal">
+							<p class="kicker" data-i18n="contact.kicker">Povpraševanje</p>
+							<h2 data-i18n="contact.title">Povejte nam o svojem dogodku</h2>
+							<p data-i18n="contact.lead">
+								Izpolnite obrazec in pripravili bomo ponudbo. Polja z zvezdico so obvezna, vse ostalo nam pomaga, da je
+								ponudba natančnejša.
+							</p>
+						</header>
+
+						<form class="form glass reveal" id="inquiry" novalidate>
+							<div class="form__grid">
+								<div class="field">
+									<label for="f-name"
+										><span data-i18n="form.name">Ime in priimek</span>
+										<span class="req" aria-hidden="true">*</span></label
+									>
+									<input id="f-name" name="name" type="text" autocomplete="name" required maxlength="120" />
+									<p class="field__error" id="f-name-err"></p>
+								</div>
+								<div class="field">
+									<label for="f-email"
+										><span data-i18n="form.email">E-pošta</span> <span class="req" aria-hidden="true">*</span></label
+									>
+									<input id="f-email" name="email" type="email" autocomplete="email" required maxlength="160" />
+									<p class="field__error" id="f-email-err"></p>
+								</div>
+								<div class="field">
+									<label for="f-org" data-i18n="form.org">Podjetje ali organizacija</label>
+									<input id="f-org" name="organization" type="text" autocomplete="organization" maxlength="160" />
+								</div>
+								<div class="field">
+									<label for="f-phone" data-i18n="form.phone">Telefon</label>
+									<input id="f-phone" name="phone" type="tel" autocomplete="tel" maxlength="40" />
+								</div>
+								<div class="field">
+									<label for="f-service" data-i18n="form.service">Kaj vas zanima?</label>
+									<select id="f-service" name="service">
+										<option value="event" data-i18n="form.serviceEvent">Dogodek na ključ</option>
+										<option value="license" data-i18n="form.serviceLicense">Licenca za vašo ekipo</option>
+										<option value="custom" data-i18n="form.serviceCustom">Po meri</option>
+										<option value="unsure" data-i18n="form.serviceUnsure">Še ne vem, svetujte mi</option>
+									</select>
+								</div>
+								<div class="field">
+									<label for="f-field" data-i18n="form.field">Področje dogodka</label>
+									<select id="f-field" name="field">
+										<option value="accounting" data-i18n="form.fieldAccounting">Računovodstvo, davki, revizija</option>
+										<option value="medicine" data-i18n="form.fieldMedicine">Medicina in farmacija</option>
+										<option value="law" data-i18n="form.fieldLaw">Pravo in javna uprava</option>
+										<option value="tech" data-i18n="form.fieldTech">Tehnologija in IT</option>
+										<option value="finance" data-i18n="form.fieldFinance">Finance in bančništvo</option>
+										<option value="industry" data-i18n="form.fieldIndustry">Industrija in energetika</option>
+										<option value="education" data-i18n="form.fieldEducation">Znanost in izobraževanje</option>
+										<option value="corporate" data-i18n="form.fieldCorporate">Poslovni dogodek</option>
+										<option value="other" data-i18n="form.fieldOther" selected>Drugo</option>
+									</select>
+								</div>
+								<div class="field">
+									<label for="f-date" data-i18n="form.date">Datum dogodka</label>
+									<input id="f-date" name="eventDate" type="date" />
+								</div>
+								<div class="field">
+									<label for="f-days" data-i18n="form.days">Trajanje</label>
+									<select id="f-days" name="duration">
+										<option value="1" data-i18n="form.days1">1 dan</option>
+										<option value="2" data-i18n="form.days2">2 dni</option>
+										<option value="3+" data-i18n="form.days3">3 dni ali več</option>
+										<option value="series" data-i18n="form.daysSeries">Več dogodkov na leto</option>
+									</select>
+								</div>
+								<div class="field">
+									<label for="f-people" data-i18n="form.people">Pričakovano število udeležencev</label>
+									<input id="f-people" name="attendees" type="number" min="1" max="100000" inputmode="numeric" />
+								</div>
+								<div class="field">
+									<label for="f-rooms" data-i18n="form.rooms">Število dvoran</label>
+									<input id="f-rooms" name="rooms" type="number" min="1" max="100" inputmode="numeric" />
+								</div>
+							</div>
+
+							<fieldset class="field field--group">
+								<legend data-i18n="form.format">Način izvedbe</legend>
+								<div class="pills">
+									<label class="pill"
+										><input type="radio" name="format" value="onsite" checked /><span data-i18n="form.formatOnsite"
+											>V dvorani</span
+										></label
+									>
+									<label class="pill"
+										><input type="radio" name="format" value="hybrid" /><span data-i18n="form.formatHybrid"
+											>Hibridno</span
+										></label
+									>
+									<label class="pill"
+										><input type="radio" name="format" value="online" /><span data-i18n="form.formatOnline"
+											>Na spletu (Zoom)</span
+										></label
+									>
+								</div>
+							</fieldset>
+
+							<fieldset class="field field--group">
+								<legend data-i18n="form.langs">Jeziki napisov</legend>
+								<div class="pills">
+									<label class="pill"
+										><input type="checkbox" name="languages" value="SL" checked /><span>SL</span></label
+									>
+									<label class="pill"
+										><input type="checkbox" name="languages" value="EN" checked /><span>EN</span></label
+									>
+									<label class="pill"><input type="checkbox" name="languages" value="DE" /><span>DE</span></label>
+									<label class="pill"><input type="checkbox" name="languages" value="IT" /><span>IT</span></label>
+									<label class="pill"><input type="checkbox" name="languages" value="FR" /><span>FR</span></label>
+									<label class="pill"><input type="checkbox" name="languages" value="HR" /><span>HR</span></label>
+									<label class="pill"><input type="checkbox" name="languages" value="SR" /><span>SR</span></label>
+								</div>
+								<input
+									class="field__other"
+									id="f-otherlangs"
+									name="otherLanguages"
+									type="text"
+									maxlength="200"
+									placeholder="Drugi jeziki, npr. ukrajinščina, španščina …"
+									aria-label="Drugi jeziki"
+									data-i18n-attr="placeholder:form.otherLangsPh;aria-label:form.otherLangs"
+								/>
+							</fieldset>
+
+							<div class="field">
+								<label for="f-msg"
+									><span data-i18n="form.message">Sporočilo</span> <span class="req" aria-hidden="true">*</span></label
+								>
+								<textarea
+									id="f-msg"
+									name="message"
+									rows="5"
+									required
+									maxlength="4000"
+									placeholder="Tema dogodka, kraj, jeziki govorcev, posebne želje …"
+									data-i18n-attr="placeholder:form.messagePh"
+								></textarea>
+								<p class="field__error" id="f-msg-err"></p>
+							</div>
+
+							<label class="consent">
+								<input type="checkbox" name="consent" id="f-consent" required />
+								<span data-i18n-html="form.consent"
+									>Strinjam se, da podatke iz obrazca uporabite za odgovor na povpraševanje. Več v
+									<a href="./zasebnost.html">politiki zasebnosti</a>.</span
+								>
+							</label>
+							<p class="field__error" id="f-consent-err"></p>
+
+							<!-- Honeypot for bots: hidden from people and screen readers. -->
+							<input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+							<div class="form__footer">
+								<button class="btn btn--primary btn--lg" type="submit" id="f-submit">
+									<span class="btn__label" data-i18n="form.submit">Pošlji povpraševanje</span>
+									<span class="spinner" aria-hidden="true"></span>
+								</button>
+								<p class="form__status" id="f-status" role="status" aria-live="polite"></p>
+							</div>
+						</form>
+
+						<div class="success glass" id="f-success" hidden tabindex="-1">
+							<div class="success__mark" aria-hidden="true">
+								<svg viewBox="0 0 52 52">
+									<circle cx="26" cy="26" r="24" />
+									<path d="m15 27 7 7 15-16" />
+								</svg>
+							</div>
+							<h3 data-i18n="form.successTitle">Hvala! Povpraševanje je poslano.</h3>
+							<p data-i18n="form.successText">
+								Odgovorili vam bomo na e-pošto, ki ste jo vpisali. Če je kaj nujno, nam pišite še enkrat.
+							</p>
+							<button class="btn btn--ghost" type="button" id="f-again" data-i18n="form.again">
+								Pošlji novo povpraševanje
+							</button>
+						</div>
+					</div>
+					<div class="split__visual" aria-hidden="true"></div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<div class="container footer__inner">
+				<div class="footer__brand">
+					<span class="brand__name">Exalyte<span>Live</span></span>
+					<p data-i18n="footer.tag">Napisi in tolmačenje v živo v 85 jezikih.</p>
+				</div>
+				<nav class="footer__links" aria-label="Noga" data-i18n-attr="aria-label:footer.label">
+					<a href="#podrocja" data-i18n="nav.fields">Področja</a>
+					<a href="#moduli" data-i18n="nav.modules">Moduli</a>
+					<a href="#paketi" data-i18n="nav.plans">Storitve</a>
+					<a href="#povprasevanje" data-i18n="nav.cta">Povpraševanje</a>
+					<a href="./zasebnost.html" data-i18n="footer.privacy">Zasebnost</a>
+				</nav>
+				<p class="footer__copy">© <span id="year">2026</span> ExalyteLive</p>
+			</div>
+		</footer>
+
+	</body>
+</html>

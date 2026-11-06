@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!-- ExalyteLive's mark (a placeholder until the brand's own): an E drawn as three caption
+       lines in three colours, for captions in several languages at once, beside a red dot
+       for live. Regenerate every icon from this file: npx tauri icon src-tauri/icons/source.svg -->
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#14233a"/>
+      <stop offset="1" stop-color="#0a1220"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.25" cy="0.2" r="0.9">
+      <stop offset="0" stop-color="#4cc3ff" stop-opacity="0.18"/>
+      <stop offset="0.6" stop-color="#4cc3ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1024" height="1024" rx="224" fill="url(#tile)"/>
+  <rect width="1024" height="1024" rx="224" fill="url(#glow)"/>
+  <g stroke-width="96" stroke-linecap="round">
+    <path stroke="#e9eef5" d="M268 260 L268 764"/>
+    <path stroke="#4cc3ff" d="M268 260 L700 260"/>
+    <path stroke="#5ad1a0" d="M268 512 L620 512"/>
+    <path stroke="#ffc14d" d="M268 764 L740 764"/>
+  </g>
+  <circle cx="800" cy="512" r="64" fill="#ff4d5e"/>
+</svg>
