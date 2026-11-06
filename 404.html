@@ -2,9 +2,18 @@
 <html lang="sl">
 	<head>
 		<meta charset="UTF-8" />
+		<script>
+			(function () {
+				var root = "/exalytelive-website-site/";
+				var at = location.pathname.indexOf(root);
+				var b = document.createElement('base');
+				b.href = at >= 0 ? location.pathname.slice(0, at + root.length) : '/';
+				document.head.prepend(b);
+			})();
+		</script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-		<title>Strani ni · ExalyteLive</title>
-		<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-aL3Pv6ygSyucrLwgv7XagHcNUqYEpcwpRZTImp8W7/g='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://api.web3forms.com; form-action 'self'; base-uri 'self'; object-src 'none'" />
+		<title>Strani ni · Page not found · ExalyteLive</title>
+		<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-gfRBgCeTbyrFEh33ooiN5rLDLz8Q77TYqqEoX4tqs6I=' 'sha256-aL3Pv6ygSyucrLwgv7XagHcNUqYEpcwpRZTImp8W7/g='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://api.web3forms.com; form-action 'self'; base-uri 'self'; object-src 'none'" />
 		<link rel="preload" href="./assets/inter-latin-wght-normal-Dx4kXJAl.woff2" as="font" type="font/woff2" crossorigin />
 		<meta name="robots" content="noindex" />
 		<meta name="theme-color" content="#0b0b0d" />
@@ -12,21 +21,29 @@
 		<script>
 			document.documentElement.classList.add('js');
 		</script>
-		<script type="module" crossorigin src="./assets/i18n-BTAjtDPW.js"></script>
-		<script type="module" crossorigin src="./assets/legal-p42aHjol.js"></script>
-		<link rel="stylesheet" crossorigin href="./assets/i18n-n9qvBfzi.css">
+		<script type="module" crossorigin src="./assets/i18n-C6C64-6-.js"></script>
+		<script type="module" crossorigin src="./assets/legal-2PXFbCIA.js"></script>
+		<link rel="stylesheet" crossorigin href="./assets/i18n-DTLJcxeC.css">
 	</head>
-	<body>
+	<body data-page="404">
 		<div class="backdrop" aria-hidden="true"></div>
 		<main class="not-found">
 			<div class="container">
 				<img class="not-found__mark" src="./favicon.svg" alt="" width="72" height="72" />
 				<p class="kicker">404</p>
 				<h1>Te strani ni.</h1>
-				<p class="not-found__lead">
-					Morda je bila prestavljena ali pa je naslov napačen. <span lang="en">This page does not exist.</span>
-				</p>
-				<a class="btn btn--primary" href="./index.html">Na domačo stran</a>
+				<p class="not-found__lead">Morda je bila prestavljena ali pa je naslov napačen.</p>
+				<ul class="not-found__langs">
+					<li lang="en">This page does not exist.</li>
+					<li lang="de">Diese Seite gibt es nicht.</li>
+					<li lang="fr">Cette page n’existe pas.</li>
+				</ul>
+				<nav class="not-found__home" aria-label="Domače strani">
+					<a class="btn btn--primary" href="./">Na domačo stran</a>
+					<a class="btn btn--ghost" href="./en/" lang="en">Home</a>
+					<a class="btn btn--ghost" href="./de/" lang="de">Startseite</a>
+					<a class="btn btn--ghost" href="./fr/" lang="fr">Accueil</a>
+				</nav>
 			</div>
 		</main>
 	</body>
