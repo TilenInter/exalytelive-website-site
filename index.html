@@ -37,6 +37,10 @@
 		<link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png" />
 		<link rel="apple-touch-icon" href="./apple-touch-icon.png" />
 		<link rel="manifest" href="./site.webmanifest" />
+		<!-- Marks that scripts run, so content hidden for its entrance animation stays visible without them. -->
+		<script>
+			document.documentElement.classList.add('js');
+		</script>
 		<script type="application/ld+json">
 			{
 				"@context": "https://schema.org",
@@ -97,9 +101,9 @@
 				]
 			}
 		</script>
-		<script type="module" crossorigin src="./assets/main-DUhngy_4.js"></script>
-		<link rel="modulepreload" crossorigin href="./assets/i18n-Dh5l2iz-.js">
-		<link rel="stylesheet" crossorigin href="./assets/i18n-DjLEIOS8.css">
+		<script type="module" crossorigin src="./assets/main-Cve5IG_y.js"></script>
+		<link rel="modulepreload" crossorigin href="./assets/i18n-B_TcqWPO.js">
+		<link rel="stylesheet" crossorigin href="./assets/i18n-AU0AgDjb.css">
 		<link rel="stylesheet" crossorigin href="./assets/main-DVCAyn8-.css">
 	</head>
 	<body data-page="home">
@@ -285,19 +289,27 @@
 								<div class="captions" aria-hidden="true">
 									<div class="lane" data-tone="white">
 										<span class="lane__chip">SL</span>
-										<p class="lane__text"></p>
+										<p class="lane__text is-final" lang="sl">
+											Pri bolnikih s srčnim popuščanjem najprej optimiziramo zdravljenje z zaviralci SGLT2.
+										</p>
 									</div>
 									<div class="lane" data-tone="cyan">
 										<span class="lane__chip">EN</span>
-										<p class="lane__text"></p>
+										<p class="lane__text is-final" lang="en">
+											In patients with heart failure, we first optimise treatment with SGLT2 inhibitors.
+										</p>
 									</div>
 									<div class="lane" data-tone="green">
 										<span class="lane__chip">DE</span>
-										<p class="lane__text"></p>
+										<p class="lane__text is-final" lang="de">
+											Bei Patienten mit Herzinsuffizienz optimieren wir zuerst die Therapie mit SGLT2-Hemmern.
+										</p>
 									</div>
 									<div class="lane" data-tone="amber">
 										<span class="lane__chip">HR</span>
-										<p class="lane__text"></p>
+										<p class="lane__text is-final" lang="hr">
+											Kod bolesnika sa zatajivanjem srca najprije optimiziramo liječenje inhibitorima SGLT2.
+										</p>
 									</div>
 								</div>
 							</div>
@@ -1001,7 +1013,14 @@
 							</p>
 						</header>
 
-						<form class="form glass reveal" id="inquiry" novalidate>
+						<noscript>
+							<p class="form-noscript glass">
+								Za pošiljanje obrazca omogočite JavaScript.
+								<span lang="en">Please enable JavaScript to send the form.</span>
+							</p>
+						</noscript>
+						<!-- POST, so that even without scripts nothing typed here ends up in an address. -->
+						<form class="form glass reveal" id="inquiry" method="post" novalidate>
 							<div class="form__grid">
 								<div class="field">
 									<label for="f-name"
