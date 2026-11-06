@@ -1,0 +1,1023 @@
+<!doctype html>
+<html lang="en" data-prerendered>
+	<head>
+		<meta charset="UTF-8" >
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" >
+		<title>ExalyteLive · Live captions and interpreting in 85 languages</title>
+		<meta name="description" content="ExalyteLive turns speech into captions and translations in 85 languages, up to four at once, with terminology modules for every field.">
+		<meta name="theme-color" content="#0b0b0d" >
+		<meta name="color-scheme" content="dark" >
+		<meta property="og:type" content="website" >
+		<meta property="og:site_name" content="ExalyteLive" >
+		<meta property="og:locale" content="en_GB">
+		<meta property="og:locale:alternate" content="en_GB" >
+		<meta property="og:locale:alternate" content="de_DE" >
+		<meta property="og:locale:alternate" content="fr_FR" >
+		<meta property="og:title" content="ExalyteLive · Vsaka beseda. V vsakem jeziku. V živo." >
+		<meta 			property="og:description"
+			content="Napisi in tolmačenje v živo v 85 jezikih, do štirih hkrati, z moduli izrazja za vsako področje."
+		>
+		<meta property="og:url" content="https://tileninter.github.io/exalytelive-website-site/en/">
+		<meta property="og:image" content="https://tileninter.github.io/exalytelive-website-site/og-image.jpg" >
+		<meta property="og:image:width" content="1200" >
+		<meta property="og:image:height" content="630" >
+		<meta property="og:image:alt" content="ExalyteLive: Vsaka beseda. V vsakem jeziku. V živo." >
+		<meta name="twitter:card" content="summary_large_image" >
+		<link rel="canonical" href="https://tileninter.github.io/exalytelive-website-site/en/">
+		<link rel="alternate" hreflang="sl" href="https://tileninter.github.io/exalytelive-website-site/" >
+		<link rel="alternate" hreflang="en" href="https://tileninter.github.io/exalytelive-website-site/en/" >
+		<link rel="alternate" hreflang="de" href="https://tileninter.github.io/exalytelive-website-site/de/" >
+		<link rel="alternate" hreflang="fr" href="https://tileninter.github.io/exalytelive-website-site/fr/" >
+		<link rel="alternate" hreflang="x-default" href="https://tileninter.github.io/exalytelive-website-site/" >
+		<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+		<link rel="icon" type="image/png" sizes="192x192" href="../icon-192.png">
+		<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+		<link rel="manifest" href="../site.webmanifest">
+		<!-- Marks that scripts run, so content hidden for its entrance animation stays visible without them. -->
+		<script>
+			document.documentElement.classList.add('js');
+		</script>
+		<script type="application/ld+json">{
+	"@context": "https://schema.org",
+	"@type": "SoftwareApplication",
+	"url": "https://tileninter.github.io/exalytelive-website-site/",
+	"image": "https://tileninter.github.io/exalytelive-website-site/og-image.jpg",
+	"name": "ExalyteLive",
+	"applicationCategory": "MultimediaApplication",
+	"operatingSystem": "Windows 11",
+	"inLanguage": [
+		"sl",
+		"en",
+		"de",
+		"fr"
+	],
+	"description": "ExalyteLive turns speech into captions and translations in 85 languages, up to four at once, with terminology modules for every field."
+}</script>
+		<script type="application/ld+json">{
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": [
+		{
+			"@type": "Question",
+			"name": "Which languages can the captions be in?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "In 85 languages, up to four at once on the same screen. Speakers can talk in any of them and switch while they speak; the interpreter detects the language itself."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "How quickly do captions appear?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "The spoken language is written while it is spoken. Translations follow within about a second and refresh during longer sentences; at the end of each sentence the interpreter polishes them."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "Does it understand the terminology of my field?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Yes. Seven terminology modules are built in (accounting, medicine, law, technology, finance, industry and science), and several can be on at once. For every event we add the event description, the speakers’ names, and terms and acronyms with fixed translations if you want them."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "Does it work for hybrid and online events?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Yes. Captions can sit in a transparent overlay above the slides, on a separate screen or in Zoom’s caption bar. Afterwards you get the transcript as SRT, WebVTT, Markdown or text."
+			}
+		}
+	]
+}</script>
+		<script type="module" crossorigin src="../assets/main-B02HuW1L.js"></script>
+		<link rel="modulepreload" crossorigin href="../assets/i18n-DEq7a1hT.js">
+		<link rel="stylesheet" crossorigin href="../assets/i18n-DoP2-T9x.css">
+		<link rel="stylesheet" crossorigin href="../assets/main-DVCAyn8-.css">
+	</head>
+	<body data-page="home">
+		<a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+		<div class="backdrop" aria-hidden="true"></div>
+		<canvas id="morph" aria-hidden="true"></canvas>
+		<div class="grain" aria-hidden="true"></div>
+		<div class="progress" id="progress" aria-hidden="true"></div>
+
+		<header class="nav" id="nav">
+			<div class="container nav__inner">
+				<a class="brand" href="#domov" aria-label="ExalyteLive">
+					<img class="brand__mark" src="../favicon.svg" alt width="34" height="34">
+					<span class="brand__name">Exalyte<span>Live</span></span>
+				</a>
+				<nav class="nav__links" id="nav-links" aria-label="Main navigation" data-i18n-attr="aria-label:nav.label">
+					<a href="#demo" data-i18n="nav.demo">Preview</a>
+					<a href="#podrocja" data-i18n="nav.fields">Fields</a>
+					<a href="#jeziki" data-i18n="nav.languages">Languages</a>
+					<a href="#moduli" data-i18n="nav.modules">Modules</a>
+					<a href="#paketi" data-i18n="nav.plans">Services</a>
+					<a href="#vprasanja" data-i18n="nav.faq">FAQ</a>
+					<button class="motion-toggle motion-toggle--menu" type="button" data-motion-toggle>
+						<svg class="motion-toggle__icon motion-toggle__icon--pause" viewBox="0 0 24 24" aria-hidden="true">
+							<path d="M9 6v12M15 6v12" ></path></svg><svg class="motion-toggle__icon motion-toggle__icon--play" viewBox="0 0 24 24" aria-hidden="true">
+							<path d="M8 5.5v13l10.5-6.5L8 5.5Z" ></path>
+						</svg>
+						<span class="motion-toggle__label">Ustavi animacije</span>
+					</button>
+				</nav>
+				<div class="nav__actions">
+					<button class="motion-toggle motion-toggle--nav" type="button" data-motion-toggle>
+						<svg class="motion-toggle__icon motion-toggle__icon--pause" viewBox="0 0 24 24" aria-hidden="true">
+							<path d="M9 6v12M15 6v12" ></path></svg><svg class="motion-toggle__icon motion-toggle__icon--play" viewBox="0 0 24 24" aria-hidden="true">
+							<path d="M8 5.5v13l10.5-6.5L8 5.5Z" ></path>
+						</svg>
+						<span class="motion-toggle__label">Ustavi animacije</span>
+					</button>
+					<div class="lang-switch" role="group" aria-label="Page language" data-i18n-attr="aria-label:nav.langLabel">
+						<button type="button" data-lang="sl" aria-pressed="false" data-href="../">SL</button>
+						<button type="button" data-lang="en" aria-pressed="true" data-href="../en/">EN</button>
+						<button type="button" data-lang="de" aria-pressed="false" data-href="../de/">DE</button>
+						<button type="button" data-lang="fr" aria-pressed="false" data-href="../fr/">FR</button>
+					</div>
+					<a class="btn btn--primary btn--sm nav__cta" href="#povprasevanje" data-i18n="nav.cta">Get a quote</a>
+					<button class="nav__toggle" type="button" aria-controls="nav-links" aria-expanded="false" aria-label="Open menu" data-i18n-attr="aria-label:nav.menu">
+						<span></span><span></span>
+					</button>
+				</div>
+			</div>
+		</header>
+
+		<nav class="dots" id="dots" aria-label="Page sections" data-i18n-attr="aria-label:nav.sections">
+			<ol>
+				<li>
+					<a href="#domov"><span class="dots__label" data-i18n="nav.home">Home</span></a>
+				</li>
+				<li>
+					<a href="#demo"><span class="dots__label" data-i18n="nav.demo">Preview</span></a>
+				</li>
+				<li>
+					<a href="#kako"><span class="dots__label" data-i18n="how.kicker">How it works</span></a>
+				</li>
+				<li>
+					<a href="#podrocja"><span class="dots__label" data-i18n="nav.fields">Fields</span></a>
+				</li>
+				<li>
+					<a href="#jeziki"><span class="dots__label" data-i18n="nav.languages">Languages</span></a>
+				</li>
+				<li>
+					<a href="#moduli"><span class="dots__label" data-i18n="nav.modules">Modules</span></a>
+				</li>
+				<li>
+					<a href="#paketi"><span class="dots__label" data-i18n="nav.plans">Services</span></a>
+				</li>
+				<li>
+					<a href="#vprasanja"><span class="dots__label" data-i18n="nav.faq">FAQ</span></a>
+				</li>
+				<li>
+					<a href="#povprasevanje"><span class="dots__label" data-i18n="nav.cta">Get a quote</span></a>
+				</li>
+			</ol>
+		</nav>
+
+		<main id="main">
+			<!-- HERO ------------------------------------------------------------------------------>
+			<section 				class="hero"
+				id="domov"
+				data-shape="0"
+				data-side="right"
+				data-col="0.8"
+				data-col-width="0.42"
+				data-m-y="0.5"
+				data-m-scale="0.5"
+			>
+				<div class="container hero__grid">
+					<div class="hero__copy">
+						<p class="eyebrow reveal">
+							<span class="live-dot" aria-hidden="true"></span>
+							<span data-i18n="hero.eyebrow">Live captions and interpreting</span>
+						</p>
+						<h1 class="hero__title reveal" data-i18n-html="hero.title">Every word.<br><span class="grad">In every language.</span><br>Live.</h1>
+						<p class="rotator reveal" id="rotator" aria-hidden="true">
+							<b class="rotator__code">EN</b><span class="rotator__text">Every word, in every language.</span>
+						</p>
+						<p class="hero__lead reveal" data-i18n="hero.lead">ExalyteLive turns speech into captions and translations in 85 languages as it is spoken, up to four at once on the same screen. For conferences, congresses, seminars, general meetings, lectures and live streams, in the vocabulary of your field.</p>
+						<div class="hero__ctas reveal">
+							<a class="btn btn--primary" href="#povprasevanje" data-i18n="hero.cta">Request a quote</a>
+							<a class="btn btn--ghost" href="#demo" data-i18n="hero.secondary">See what it looks like</a>
+						</div>
+						<ul class="hero__chips reveal" aria-label="Key features" data-i18n-attr="aria-label:hero.chipsLabel">
+							<li><b>85</b> <span data-i18n="hero.chip1">languages</span></li>
+							<li><b>4</b> <span data-i18n="hero.chip2">languages at once</span></li>
+							<li><b>≈ 1 s</b> <span data-i18n="hero.chip3">to translation</span></li>
+							<li><span data-i18n="hero.chip4">Modules for every field</span></li>
+						</ul>
+					</div>
+					<!-- Shown only without WebGL: a CSS take on the 3D orb. -->
+					<div class="hero__fallback" aria-hidden="true">
+						<div class="orb">
+							<span class="orb__ring"></span><span class="orb__ring orb__ring--b"></span><span class="orb__core"></span>
+						</div>
+					</div>
+				</div>
+				<a class="scroll-cue" href="#demo" aria-label="Scroll on" data-i18n-attr="aria-label:hero.scroll">
+					<span></span>
+				</a>
+			</section>
+
+			<!-- DEMO ------------------------------------------------------------------------------>
+			<section class="section demo" id="demo" data-shape="1" data-side="center">
+				<div class="container">
+					<header class="section__head section__head--center reveal">
+						<p class="kicker" data-i18n="demo.kicker">Preview</p>
+						<h2 data-i18n="demo.title">What the room sees</h2>
+						<p data-i18n="demo.lead">The spoken language is written as it is said and the translations follow within about a second. When the speaker finishes a sentence, the interpreter fixes misheard terms and polishes every line. Cardiology, technology, law or an annual general meeting: the interpreter adapts to the subject and the languages.</p>
+					</header>
+
+					<p class="sr-only" data-i18n="demo.sr">Caption example: speech is written out live in its own language, with translations into three other languages appearing below it.</p>
+					<div class="demo-langs reveal" id="demo-langs" role="group" aria-labelledby="demo-langs-label">
+						<p class="demo-langs__label" id="demo-langs-label" data-i18n="demo.pick">Pick up to three translation languages:</p>
+						<div class="demo-langs__list"></div>
+						<p class="demo-langs__note" data-i18n="demo.pickNote">The preview has 10 languages; ExalyteLive knows 85.</p>
+					</div>
+					<div class="stage reveal" id="stage">
+						<div class="stage__bezel">
+							<div class="stage__screen">
+								<div class="stage__aura" aria-hidden="true"><span></span><span></span></div>
+								<div class="slide" aria-hidden="true">
+									<p class="slide__kicker">Kardiološki kongres · Dvorana B</p>
+									<p class="slide__title">Nove smernice za zdravljenje srčnega popuščanja</p>
+									<div class="slide__bars">
+										<span style="--h: 42%"></span><span style="--h: 64%"></span><span style="--h: 55%"></span><span style="--h: 78%"></span><span style="--h: 70%"></span><span style="--h: 92%"></span>
+									</div>
+								</div>
+								<div class="captions" aria-hidden="true">
+									<div class="lane" data-tone="white">
+										<span class="lane__chip">SL</span>
+										<p class="lane__text is-final" lang="sl">
+											Pri bolnikih s srčnim popuščanjem najprej optimiziramo zdravljenje z zaviralci SGLT2.
+										</p>
+									</div>
+									<div class="lane" data-tone="cyan">
+										<span class="lane__chip">EN</span>
+										<p class="lane__text is-final" lang="en">
+											In patients with heart failure, we first optimise treatment with SGLT2 inhibitors.
+										</p>
+									</div>
+									<div class="lane" data-tone="green">
+										<span class="lane__chip">DE</span>
+										<p class="lane__text is-final" lang="de">
+											Bei Patienten mit Herzinsuffizienz optimieren wir zuerst die Therapie mit SGLT2-Hemmern.
+										</p>
+									</div>
+									<div class="lane" data-tone="amber">
+										<span class="lane__chip">HR</span>
+										<p class="lane__text is-final" lang="hr">
+											Kod bolesnika sa zatajivanjem srca najprije optimiziramo liječenje inhibitorima SGLT2.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="stage__meta">
+							<span class="badge badge--live"
+								><span class="live-dot" aria-hidden="true"></span><span data-i18n="demo.live">Live</span></span>
+							<span data-i18n="demo.meta1">Transparent overlay above the slides</span>
+							<span data-i18n="demo.meta2">Faded words: the next words, predicted</span>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- WHY ------------------------------------------------------------------------------->
+			<section class="section why" id="zakaj">
+				<div class="container">
+					<header class="section__head section__head--center reveal">
+						<p class="kicker" data-i18n="why.kicker">Why live captions</p>
+						<h2 data-i18n="why.title">Everyone in the room understands</h2>
+					</header>
+					<div class="why__grid">
+						<article class="why__card glass tilt reveal" style="--c: var(--green)">
+							<div class="module__icon">
+								<svg viewBox="0 0 24 24">
+									<circle cx="12" cy="12" r="9" ></circle>
+									<path d="M8.5 13.5c1 1.4 2.2 2 3.5 2s2.5-.6 3.5-2M9 9.5h.01M15 9.5h.01" ></path>
+								</svg>
+							</div>
+							<h3 data-i18n="why.b1.title">Accessible to all</h3>
+							<p data-i18n="why.b1.text">Deaf and hard-of-hearing guests, and anyone who hears poorly in a large room, follow every word.</p>
+						</article>
+						<article class="why__card glass tilt reveal" style="--c: var(--cyan)">
+							<div class="module__icon">
+								<svg viewBox="0 0 24 24">
+									<path d="M4 6h10M9 4v2M6.5 6c.8 3.4 3 5.8 6 7M12 6c-.9 4-3.6 7-7 8.5" ></path>
+									<path d="m13 20 3.5-8 3.5 8M14.2 17.3h4.6" ></path>
+								</svg>
+							</div>
+							<h3 data-i18n="why.b2.title">Everyone in their own language</h3>
+							<p data-i18n="why.b2.text">International guests read their own language on the shared screen, with no headsets or receivers.</p>
+						</article>
+						<article class="why__card glass tilt reveal" style="--c: var(--amber)">
+							<div class="module__icon">
+								<svg viewBox="0 0 24 24"><path d="M3 12h2l2-6 3 12 3-9 2 5 2-2h4" ></path></svg>
+							</div>
+							<h3 data-i18n="why.b3.title">Clear even when it is noisy</h3>
+							<p data-i18n="why.b3.text">When the sound is poor or the speaker hurries, captions help catch the terms, figures and names.</p>
+						</article>
+						<article class="why__card glass tilt reveal" style="--c: var(--accent)">
+							<div class="module__icon">
+								<svg viewBox="0 0 24 24">
+									<path d="M7 3h7l5 5v13H7z" ></path>
+									<path d="M14 3v5h5M10 13h6M10 17h6" ></path>
+								</svg>
+							</div>
+							<h3 data-i18n="why.b4.title">A transcript right after</h3>
+							<p data-i18n="why.b4.text">Text for the minutes, publication and recordings is ready when the event ends.</p>
+						</article>
+					</div>
+				</div>
+			</section>
+
+			<!-- HOW ------------------------------------------------------------------------------->
+			<section class="section how" id="kako">
+				<div class="container split split--story">
+					<div class="split__copy">
+						<header class="section__head reveal">
+							<p class="kicker" data-i18n="how.kicker">How it works</p>
+							<h2 data-i18n="how.title">From a voice to four lines of captions</h2>
+							<p data-i18n="how.lead">One transcript, many languages: every translation comes from the same sentence, so they agree with each other and extra languages barely add to the cost.</p>
+						</header>
+						<ol class="steps" id="steps">
+							<li class="step-wrap" data-shape="1" data-side="right">
+								<div class="step glass reveal">
+									<span class="step__num">01</span>
+									<div>
+										<h3 data-i18n="how.s1.title">Sound from the room and online</h3>
+										<p data-i18n="how.s1.text">A microphone in the room, the computer’s own audio or the sound of a single app such as Zoom. Captions tell the speaker in the room from the one joining remotely.</p>
+									</div>
+								</div>
+							</li>
+							<li class="step-wrap" data-shape="0" data-side="right">
+								<div class="step glass reveal">
+									<span class="step__num">02</span>
+									<div>
+										<h3 data-i18n="how.s2.title">A transcript that knows the subject</h3>
+										<p data-i18n="how.s2.text">The speech model writes as people talk and knows the event’s description, the speakers’ names and the terms in the module. At each pause it repairs misheard words and drops fillers.</p>
+									</div>
+								</div>
+							</li>
+							<li class="step-wrap" data-shape="2" data-side="right">
+								<div class="step glass reveal">
+									<span class="step__num">03</span>
+									<div>
+										<h3 data-i18n="how.s3.title">Up to four languages at once</h3>
+										<p data-i18n="how.s3.text">The same transcript becomes captions in up to four languages: in a transparent overlay above the slides, on a projector, an LED wall or in Zoom’s caption bar.</p>
+									</div>
+								</div>
+							</li>
+						</ol>
+					</div>
+					<div class="split__visual" aria-hidden="true"></div>
+				</div>
+			</section>
+
+			<!-- FIELDS (terminology modules) ------------------------------------------------------>
+			<section class="section fields" id="podrocja" data-shape="3" data-side="center">
+				<div class="container">
+					<header class="section__head section__head--center reveal">
+						<p class="kicker" data-i18n="fields.kicker">Terminology modules</p>
+						<h2 data-i18n="fields.title">A module for every field</h2>
+						<p data-i18n="fields.lead">A terminology module tells the interpreter which words it will hear and how to translate them. Seven modules are built in and you can switch on as many as you like at once; for any other field we prepare one from your event’s programme, or you put it together yourself.</p>
+					</header>
+				</div>
+				<div class="marquee reveal" id="marquee" aria-hidden="true"></div>
+				<div class="container">
+					<div class="fields__grid">
+						<article class="field-card glass tilt reveal" style="--c: var(--amber)">
+							<span class="tag tag--accent" data-i18n="fields.builtIn">Built in</span>
+							<h3 data-i18n="fields.f1.title">Accounting, tax and audit</h3>
+							<p data-i18n="fields.f1.text">Over 400 concepts in Slovenian, English, Croatian and Serbian: financial statements, IFRS, VAT, audit opinions, ESRS and the region’s institutions.</p>
+						</article>
+						<article class="field-card glass tilt reveal" style="--c: var(--red)">
+							<span class="tag tag--accent" data-i18n="fields.builtIn">Built in</span>
+							<h3 data-i18n="fields.f2.title">Medicine and pharma</h3>
+							<p data-i18n="fields.f2.text">Diagnoses, drugs, procedures and the speakers’ names for congresses and professional meetings.</p>
+						</article>
+						<article class="field-card glass tilt reveal" style="--c: var(--violet)">
+							<span class="tag tag--accent" data-i18n="fields.builtIn">Built in</span>
+							<h3 data-i18n="fields.f3.title">Law and public administration</h3>
+							<p data-i18n="fields.f3.text">Regulations, institutions and legal terms for conferences, sessions and training.</p>
+						</article>
+						<article class="field-card glass tilt reveal" style="--c: var(--cyan)">
+							<span class="tag tag--accent" data-i18n="fields.builtIn">Built in</span>
+							<h3 data-i18n="fields.f4.title">Technology and IT</h3>
+							<p data-i18n="fields.f4.text">Products, acronyms and the English jargon speakers weave into every language.</p>
+						</article>
+						<article class="field-card glass tilt reveal" style="--c: var(--green)">
+							<span class="tag tag--accent" data-i18n="fields.builtIn">Built in</span>
+							<h3 data-i18n="fields.f5.title">Finance and banking</h3>
+							<p data-i18n="fields.f5.text">Markets, instruments and regulation for finance conferences and investor presentations.</p>
+						</article>
+						<article class="field-card glass tilt reveal" style="--c: var(--amber)">
+							<span class="tag tag--accent" data-i18n="fields.builtIn">Built in</span>
+							<h3 data-i18n="fields.f6.title">Industry, energy and engineering</h3>
+							<p data-i18n="fields.f6.text">Technical terms, standards and product names for trade fairs and industry days.</p>
+						</article>
+						<article class="field-card glass tilt reveal" style="--c: var(--cyan)">
+							<span class="tag tag--accent" data-i18n="fields.builtIn">Built in</span>
+							<h3 data-i18n="fields.f7.title">Science and education</h3>
+							<p data-i18n="fields.f7.text">Lectures, symposia, defences and international study programmes.</p>
+						</article>
+						<article class="field-card glass tilt reveal" style="--c: var(--violet)">
+							<span class="tag" data-i18n="fields.prepared">We prepare it</span>
+							<h3 data-i18n="fields.f8.title">Business and corporate events</h3>
+							<p data-i18n="fields.f8.text">General meetings, annual conferences, product launches and internal events.</p>
+						</article>
+						<article class="field-card field-card--custom glass tilt reveal" style="--c: var(--accent)">
+							<span class="tag tag--accent" data-i18n="fields.yours">Your module</span>
+							<h3 data-i18n="fields.f9.title">Custom</h3>
+							<p data-i18n-html="fields.f9.text">Your terms, acronyms and the names of speakers and products, with a fixed translation if you like: <code>terjatve = receivables</code>.</p>
+						</article>
+					</div>
+					<p class="fields__note reveal" data-i18n="fields.note">The built-in modules for medicine, law, technology, finance, industry and science come in seven languages (SL, EN, HR, SR, DE, IT, FR), the accounting module in four. Each event adds its description and up to 100 terms with optional translations; the interpreter applies all of it to the transcript and to every translation at once.</p>
+				</div>
+			</section>
+
+			<!-- LANGUAGES ------------------------------------------------------------------------->
+			<section class="section languages" id="jeziki" data-shape="4" data-side="right">
+				<div class="container split">
+					<div class="split__copy">
+						<header class="section__head reveal">
+							<p class="kicker" data-i18n="langs.kicker">Languages</p>
+							<h2 data-i18n="langs.title">85 languages. Up to four at once.</h2>
+							<p data-i18n="langs.lead">Speakers can talk in any language and switch mid-talk. The room reads the language you choose, or up to four at once. Arabic, Hebrew and other right-to-left languages are shown right to left.</p>
+						</header>
+						<ul class="lang-cloud reveal" aria-label="Some of the supported languages" data-i18n-attr="aria-label:langs.cloudLabel">
+							<li lang="sl">Slovenščina</li>
+							<li lang="en">English</li>
+							<li lang="de">Deutsch</li>
+							<li lang="it">Italiano</li>
+							<li lang="fr">Français</li>
+							<li lang="es">Español</li>
+							<li lang="pt">Português</li>
+							<li lang="hr">Hrvatski</li>
+							<li lang="sr">Srpski</li>
+							<li lang="bs">Bosanski</li>
+							<li lang="mk">Македонски</li>
+							<li lang="bg">Български</li>
+							<li lang="cs">Čeština</li>
+							<li lang="sk">Slovenčina</li>
+							<li lang="pl">Polski</li>
+							<li lang="hu">Magyar</li>
+							<li lang="ro">Română</li>
+							<li lang="uk">Українська</li>
+							<li lang="el">Ελληνικά</li>
+							<li lang="tr">Türkçe</li>
+							<li lang="nl">Nederlands</li>
+							<li lang="sv">Svenska</li>
+							<li lang="fi">Suomi</li>
+							<li lang="ar" dir="rtl">العربية</li>
+							<li lang="he" dir="rtl">עברית</li>
+							<li lang="hi">हिन्दी</li>
+							<li lang="zh">中文</li>
+							<li lang="ja">日本語</li>
+							<li lang="ko">한국어</li>
+							<li class="lang-cloud__more" data-i18n="langs.more">+ 56 more</li>
+						</ul>
+						<div class="presets">
+							<div class="preset glass reveal">
+								<h3 data-i18n="langs.p1.title">One room, one language</h3>
+								<p data-i18n="langs.p1.text">Speakers in any language, the room reads a single line in its own.</p>
+							</div>
+							<div class="preset glass reveal">
+								<h3 data-i18n="langs.p2.title">Four languages</h3>
+								<p data-i18n="langs.p2.text">Up to four lines at once for an international audience.</p>
+							</div>
+							<div class="preset glass reveal">
+								<h3 data-i18n="langs.p3.title">Bilingual event</h3>
+								<p data-i18n="langs.p3.text">Flip the direction with a single key (F2) when the speaker changes.</p>
+							</div>
+							<div class="preset glass reveal">
+								<h3 data-i18n="langs.p4.title">Subtitles without translation</h3>
+								<p data-i18n="langs.p4.text">Speech written down in its own language, even offline with the local engine.</p>
+							</div>
+						</div>
+					</div>
+					<div class="split__visual" aria-hidden="true"></div>
+				</div>
+			</section>
+
+			<!-- APP MODULES ----------------------------------------------------------------------->
+			<section class="section modules" id="moduli" data-shape="7" data-side="center">
+				<div class="container">
+					<header class="section__head section__head--center reveal">
+						<p class="kicker" data-i18n="modules.kicker">App modules</p>
+						<h2 data-i18n="modules.title">Everything an operator needs</h2>
+						<p data-i18n="modules.lead">ExalyteLive is a studio for live captions: from the sound in the room to the transcript after the event, with the tools an operator needs while on air.</p>
+					</header>
+					<div class="modules__grid">
+						<article class="module glass tilt reveal" style="--c: var(--accent)">
+							<div class="module__icon">
+								<svg viewBox="0 0 24 24">
+									<path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z" ></path>
+									<path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" ></path>
+								</svg>
+							</div>
+							<h3 data-i18n="modules.m1.title">Interpreter</h3>
+							<p data-i18n="modules.m1.text">Transcription and translation into every caption language in one step, at Fast, Careful, Maximum or Ultra quality.</p>
+						</article>
+						<article class="module glass tilt reveal" style="--c: var(--cyan)">
+							<div class="module__icon">
+								<svg viewBox="0 0 24 24">
+									<rect x="3" y="4" width="18" height="7" rx="2" ></rect>
+									<rect x="3" y="13" width="18" height="7" rx="2" ></rect>
+									<path d="M7 7.5h.01M7 16.5h.01" ></path>
+								</svg>
+							</div>
+							<h3 data-i18n="modules.m2.title">Several engines</h3>
+							<p data-i18n="modules.m2.text">Gemini, OpenAI Realtime, Mistral Voxtral or local Whisper, which works offline.</p>
+						</article>
+						<article class="module glass tilt reveal" style="--c: var(--green)">
+							<div class="module__icon">
+								<svg viewBox="0 0 24 24">
+									<rect x="9" y="3" width="6" height="11" rx="3" ></rect>
+									<path d="M5 11a7 7 0 0 0 14 0M12 18v3" ></path>
+								</svg>
+							</div>
+							<h3 data-i18n="modules.m3.title">Audio sources</h3>
+							<p data-i18n="modules.m3.text">Microphone, system audio or a single app, with a level meter and recovery when a device drops out.</p>
+						</article>
+						<article class="module glass tilt reveal" style="--c: var(--amber)">
+							<div class="module__icon">
+								<svg viewBox="0 0 24 24"><path d="M4 5h16M4 12h10M4 19h13" ></path></svg>
+							</div>
+							<h3 data-i18n="modules.m4.title">Terminology modules</h3>
+							<p data-i18n="modules.m4.text">Seven built-in fields you can combine, plus the event description, names and your own terms.</p>
+						</article>
+						<article class="module glass tilt reveal" style="--c: var(--violet)">
+							<div class="module__icon">
+								<svg viewBox="0 0 24 24"><path d="M4 12h7M15 12h1M19 12h1M4 6h16M4 18h10" ></path></svg>
+							</div>
+							<h3 data-i18n="modules.m5.title">Next-word prediction</h3>
+							<p data-i18n="modules.m5.text">Faded words behind the cursor that are likely to come next; when the speaker says them, the real text takes over.</p>
+						</article>
+						<article class="module glass tilt reveal" style="--c: var(--red)">
+							<div class="module__icon">
+								<svg viewBox="0 0 24 24">
+									<path d="M4 12h16" ></path>
+									<path d="M7 8c1 1 1 7 0 8M17 8c-1 1-1 7 0 8" ></path>
+								</svg>
+							</div>
+							<h3 data-i18n="modules.m6.title">No fillers</h3>
+							<p data-i18n="modules.m6.text">Um, uh and other fillers disappear from the screen; you edit the list.</p>
+						</article>
+						<article class="module glass tilt reveal" style="--c: var(--cyan)">
+							<div class="module__icon">
+								<svg viewBox="0 0 24 24">
+									<rect x="3" y="4" width="18" height="12" rx="2" ></rect>
+									<path d="M6 13h8M8 20h8" ></path>
+								</svg>
+							</div>
+							<h3 data-i18n="modules.m7.title">Transparent overlay</h3>
+							<p data-i18n="modules.m7.text">Always on top, nudged with the arrow keys, snapped to the bottom of the screen and locked.</p>
+						</article>
+						<article class="module glass tilt reveal" style="--c: var(--accent)">
+							<div class="module__icon">
+								<svg viewBox="0 0 24 24">
+									<path d="M4 20h4L18.5 9.5a2.1 2.1 0 0 0-3-3L5 17v3Z" ></path>
+									<path d="m13.5 8.5 3 3" ></path>
+								</svg>
+							</div>
+							<h3 data-i18n="modules.m8.title">Caption appearance</h3>
+							<p data-i18n="modules.m8.text">Size, layout, colours and backing with a contrast check, plus presets for large rooms.</p>
+						</article>
+						<article class="module glass tilt reveal" style="--c: var(--green)">
+							<div class="module__icon">
+								<svg viewBox="0 0 24 24">
+									<path d="M4 8h16M4 14h11" ></path>
+									<path d="M4 19h7" opacity=".5" ></path>
+								</svg>
+							</div>
+							<h3 data-i18n="modules.m9.title">Original under the translation</h3>
+							<p data-i18n="modules.m9.text">Optionally a smaller line with the original speech under every translation.</p>
+						</article>
+						<article class="module glass tilt reveal" style="--c: var(--cyan)">
+							<div class="module__icon">
+								<svg viewBox="0 0 24 24">
+									<rect x="3" y="6" width="13" height="12" rx="2" ></rect>
+									<path d="m16 10 5-3v10l-5-3" ></path>
+								</svg>
+							</div>
+							<h3 data-i18n="modules.m10.title">Zoom</h3>
+							<p data-i18n="modules.m10.text">Captions in Zoom’s caption bar, even without the local overlay.</p>
+						</article>
+						<article class="module glass tilt reveal" style="--c: var(--violet)">
+							<div class="module__icon">
+								<svg viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4V3Z" ></path></svg>
+							</div>
+							<h3 data-i18n="modules.m11.title">Event profiles</h3>
+							<p data-i18n="modules.m11.text">Save the setup, appearance and overlay position, and load them in one click.</p>
+						</article>
+						<article class="module glass tilt reveal" style="--c: var(--green)">
+							<div class="module__icon">
+								<svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6" ></path></svg>
+							</div>
+							<h3 data-i18n="modules.m12.title">Pre-flight check</h3>
+							<p data-i18n="modules.m12.text">Test the sound and overlay position, see the cost estimate and rehearse with a recording.</p>
+						</article>
+						<article class="module glass tilt reveal" style="--c: var(--amber)">
+							<div class="module__icon">
+								<svg viewBox="0 0 24 24">
+									<path d="M7 3h7l5 5v13H7z" ></path>
+									<path d="M14 3v5h5M10 13h6M10 17h6" ></path>
+								</svg>
+							</div>
+							<h3 data-i18n="modules.m13.title">Transcript and export</h3>
+							<p data-i18n="modules.m13.text">Markdown, text, SRT or WebVTT, with unsaved lines restored after a crash.</p>
+						</article>
+						<article class="module glass tilt reveal" style="--c: var(--cyan)">
+							<div class="module__icon">
+								<svg viewBox="0 0 24 24">
+									<path d="M12 7v5l3 2" ></path>
+									<path d="M3.5 12a8.5 8.5 0 1 0 2.5-6L3.5 8.5" ></path>
+									<path d="M3.5 4v4.5H8" ></path>
+								</svg>
+							</div>
+							<h3 data-i18n="modules.m14.title">History</h3>
+							<p data-i18n="modules.m14.text">Optional and never with audio: search, filter by date and language, export.</p>
+						</article>
+						<article class="module glass tilt reveal" style="--c: var(--accent)">
+							<div class="module__icon">
+								<svg viewBox="0 0 24 24">
+									<rect x="2.5" y="6" width="19" height="12" rx="2" ></rect>
+									<path d="M6 10h.01M9 10h.01M12 10h.01M15 10h.01M18 10h.01M7 14h10" ></path>
+								</svg>
+							</div>
+							<h3 data-i18n="modules.m15.title">Shortcuts and pause</h3>
+							<p data-i18n="modules.m15.text">Start, pause, overlay and caption size from the keyboard; nothing is billed while paused.</p>
+						</article>
+						<article class="module glass tilt reveal" style="--c: var(--red)">
+							<div class="module__icon">
+								<svg viewBox="0 0 24 24">
+									<rect x="5" y="10" width="14" height="10" rx="2" ></rect>
+									<path d="M8 10V7a4 4 0 0 1 8 0v3" ></path>
+								</svg>
+							</div>
+							<h3 data-i18n="modules.m16.title">Privacy</h3>
+							<p data-i18n="modules.m16.text">No telemetry, keys in Windows Credential Manager, interface in Slovenian, English, German and French.</p>
+						</article>
+					</div>
+				</div>
+			</section>
+
+			<!-- PLANS ----------------------------------------------------------------------------->
+			<section class="section plans" id="paketi" data-shape="5" data-side="center">
+				<div class="container">
+					<div class="stats reveal" id="stats">
+						<div class="stat">
+							<b data-count="85">85</b>
+							<span data-i18n="stats.s1">caption languages</span>
+						</div>
+						<div class="stat">
+							<b data-count="4">4</b>
+							<span data-i18n="stats.s2">languages on screen at once</span>
+						</div>
+						<div class="stat">
+							<b data-count="1" data-prefix="≈ " data-suffix=" s">≈ 1 s</b>
+							<span data-i18n="stats.s3">to translation</span>
+						</div>
+						<div class="stat">
+							<b data-count="0">0</b>
+							<span data-i18n="stats.s4">telemetry</span>
+						</div>
+					</div>
+
+					<header class="section__head section__head--center reveal">
+						<p class="kicker" data-i18n="plans.kicker">Services</p>
+						<h2 data-i18n="plans.title">Choose how we work together</h2>
+						<p data-i18n="plans.lead">Every event is different: the subject, the number of rooms, languages and days. Send us an inquiry and we will prepare a tailored quote.</p>
+					</header>
+
+					<div class="plans__grid">
+						<article class="plan glass tilt reveal">
+							<p class="plan__tag" data-i18n="plans.p1.tag">Most popular</p>
+							<h3 data-i18n="plans.p1.title">Turnkey event</h3>
+							<p class="plan__desc" data-i18n="plans.p1.desc">We bring the equipment and an operator and run the captions for the whole event.</p>
+							<ul>
+								<li data-i18n="plans.p1.i1">A terminology module for your event’s subject</li>
+								<li data-i18n="plans.p1.i2">Connected to the room’s sound and projector</li>
+								<li data-i18n="plans.p1.i3">Up to 4 caption languages, also in Zoom</li>
+								<li data-i18n="plans.p1.i4">Transcript afterwards (SRT, WebVTT, text)</li>
+							</ul>
+							<p class="plan__price" data-i18n="plans.price">Price on request</p>
+							<a class="btn btn--primary" href="#povprasevanje" data-plan="event" data-i18n="plans.cta"
+								>Request a quote</a>
+						</article>
+						<article class="plan glass tilt reveal">
+							<p class="plan__tag plan__tag--muted" data-i18n="plans.p2.tag">For organisers</p>
+							<h3 data-i18n="plans.p2.title">Licence for your team</h3>
+							<p class="plan__desc" data-i18n="plans.p2.desc">ExalyteLive on your own computers, for events you run yourselves.</p>
+							<ul>
+								<li data-i18n="plans.p2.i1">Installation and setup on Windows 11</li>
+								<li data-i18n="plans.p2.i2">Training for your technicians</li>
+								<li data-i18n="plans.p2.i3">Terminology modules for your fields</li>
+								<li data-i18n="plans.p2.i4">Updates and support</li>
+							</ul>
+							<p class="plan__price" data-i18n="plans.price">Price on request</p>
+							<a class="btn btn--ghost" href="#povprasevanje" data-plan="license" data-i18n="plans.cta"
+								>Request a quote</a>
+						</article>
+						<article class="plan glass tilt reveal">
+							<p class="plan__tag plan__tag--muted" data-i18n="plans.p3.tag">Larger events</p>
+							<h3 data-i18n="plans.p3.title">Custom</h3>
+							<p class="plan__desc" data-i18n="plans.p3.desc">Several rooms, several days, or special needs for languages and display.</p>
+							<ul>
+								<li data-i18n="plans.p3.i1">Several rooms and audio sources at once</li>
+								<li data-i18n="plans.p3.i2">Your own modules and language pairs</li>
+								<li data-i18n="plans.p3.i3">Captions in your brand</li>
+								<li data-i18n="plans.p3.i4">Preparation and a rehearsal beforehand</li>
+							</ul>
+							<p class="plan__price" data-i18n="plans.price">Price on request</p>
+							<a class="btn btn--ghost" href="#povprasevanje" data-plan="custom" data-i18n="plans.cta"
+								>Request a quote</a>
+						</article>
+					</div>
+
+					<div class="process">
+						<header class="section__head section__head--center reveal">
+							<p class="kicker" data-i18n="process.kicker">How we work</p>
+							<h2 data-i18n="process.title">From inquiry to transcript</h2>
+							<p data-i18n="process.lead">Five steps that we guide you through; you bring the content of your event.</p>
+						</header>
+						<ol class="process__list">
+							<li class="process__step glass reveal">
+								<span class="process__num">01</span>
+								<h3 data-i18n="process.s1.title">Inquiry</h3>
+								<p data-i18n="process.s1.text">Fill in the form: topic, date, rooms and languages.</p>
+							</li>
+							<li class="process__step glass reveal">
+								<span class="process__num">02</span>
+								<h3 data-i18n="process.s2.title">Quote</h3>
+								<p data-i18n="process.s2.text">Together we settle the languages, how captions are shown and the scope, and prepare a quote.</p>
+							</li>
+							<li class="process__step glass reveal">
+								<span class="process__num">03</span>
+								<h3 data-i18n="process.s3.title">Terminology module</h3>
+								<p data-i18n="process.s3.text">From the programme, the speakers’ names and your materials we prepare a module for your field.</p>
+							</li>
+							<li class="process__step glass reveal">
+								<span class="process__num">04</span>
+								<h3 data-i18n="process.s4.title">Test run</h3>
+								<p data-i18n="process.s4.text">Before the event we check the sound and the caption position and rehearse with a recording.</p>
+							</li>
+							<li class="process__step glass reveal">
+								<span class="process__num">05</span>
+								<h3 data-i18n="process.s5.title">Event and transcript</h3>
+								<p data-i18n="process.s5.text">Captions run live; afterwards you receive the transcript as SRT, WebVTT or text.</p>
+							</li>
+						</ol>
+					</div>
+
+					<div class="audience reveal">
+						<p class="kicker" data-i18n="audience.kicker">Who it is for</p>
+						<ul>
+							<li data-i18n="audience.a1">Conferences and congresses</li>
+							<li data-i18n="audience.a2">Professional meetings and seminars</li>
+							<li data-i18n="audience.a3">General meetings and corporate events</li>
+							<li data-i18n="audience.a4">Hybrid events and webinars</li>
+							<li data-i18n="audience.a5">Lectures and academies</li>
+							<li data-i18n="audience.a6">Public administration and municipalities</li>
+							<li data-i18n="audience.a7">Trade fairs and product launches</li>
+							<li data-i18n="audience.a8">Cultural and social events</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<!-- FAQ ------------------------------------------------------------------------------->
+			<section class="section faq" id="vprasanja" data-shape="5" data-side="center">
+				<div class="container container--narrow">
+					<header class="section__head section__head--center reveal">
+						<p class="kicker" data-i18n="faq.kicker">FAQ</p>
+						<h2 data-i18n="faq.title">Frequently asked questions</h2>
+					</header>
+					<div class="faq__list">
+						<details class="qa glass reveal">
+							<summary data-i18n="faq.q1">Which languages can the captions be in?</summary>
+							<p data-i18n="faq.a1">In 85 languages, up to four at once on the same screen. Speakers can talk in any of them and switch while they speak; the interpreter detects the language itself.</p>
+						</details>
+						<details class="qa glass reveal">
+							<summary data-i18n="faq.q2">How quickly do captions appear?</summary>
+							<p data-i18n="faq.a2">The spoken language is written while it is spoken. Translations follow within about a second and refresh during longer sentences; at the end of each sentence the interpreter polishes them.</p>
+						</details>
+						<details class="qa glass reveal">
+							<summary data-i18n="faq.q3">Does it understand the terminology of my field?</summary>
+							<p data-i18n="faq.a3">Yes. Seven terminology modules are built in (accounting, medicine, law, technology, finance, industry and science), and several can be on at once. For every event we add the event description, the speakers’ names, and terms and acronyms with fixed translations if you want them.</p>
+						</details>
+						<details class="qa glass reveal">
+							<summary data-i18n="faq.q4">What do we need at the event?</summary>
+							<p data-i18n="faq.a4">An audio source (a mixing desk or a microphone), a screen or projector for the captions and a stable internet connection. For a turnkey event we bring the computer and an operator.</p>
+						</details>
+						<details class="qa glass reveal">
+							<summary data-i18n="faq.q5">Does it work for hybrid and online events?</summary>
+							<p data-i18n="faq.a5">Yes. Captions can sit in a transparent overlay above the slides, on a separate screen or in Zoom’s caption bar. Afterwards you get the transcript as SRT, WebVTT, Markdown or text.</p>
+						</details>
+						<details class="qa glass reveal">
+							<summary data-i18n="faq.q6">Can the captions match our brand?</summary>
+							<p data-i18n="faq.a6">Yes. We adapt the size, layout, colours, backing and position of the captions to the room and your brand, and save them in an event profile.</p>
+						</details>
+						<details class="qa glass reveal">
+							<summary data-i18n="faq.q7">What about the speakers’ privacy?</summary>
+							<p data-i18n="faq.a7">Audio goes only to the engine you choose, the app collects no telemetry, and session history is off by default and never contains audio. For the strictest requirements there is a local engine that keeps the audio on the computer.</p>
+						</details>
+						<details class="qa glass reveal">
+							<summary data-i18n="faq.q8">How much does it cost?</summary>
+							<p data-i18n="faq.a8">It depends on the length of the event, the number of rooms and languages, and whether you want an operator. Send us an inquiry and we will prepare a tailored quote.</p>
+						</details>
+					</div>
+				</div>
+			</section>
+
+			<!-- CONTACT --------------------------------------------------------------------------->
+			<section 				class="section contact"
+				id="povprasevanje"
+				data-shape="6"
+				data-side="right"
+				data-col="0.82"
+				data-col-width="0.34"
+			>
+				<div class="container split split--contact">
+					<div class="split__copy">
+						<header class="section__head reveal">
+							<p class="kicker" data-i18n="contact.kicker">Inquiry</p>
+							<h2 data-i18n="contact.title">Tell us about your event</h2>
+							<p data-i18n="contact.lead">Fill in the form and we will prepare a quote. Fields marked with an asterisk are required; everything else helps us make the quote more precise.</p>
+						</header>
+
+						<noscript>
+							<p class="form-noscript glass">
+								Za pošiljanje obrazca omogočite JavaScript.
+								<span lang="en">Please enable JavaScript to send the form.</span>
+							</p>
+						</noscript>
+						<!-- POST, so that even without scripts nothing typed here ends up in an address. -->
+						<form class="form glass reveal" id="inquiry" method="post" novalidate>
+							<div class="form__grid">
+								<div class="field">
+									<label for="f-name"
+										><span data-i18n="form.name">Full name</span>
+										<span class="req" aria-hidden="true">*</span></label>
+									<input id="f-name" name="name" type="text" autocomplete="name" required maxlength="120" >
+									<p class="field__error" id="f-name-err"></p>
+								</div>
+								<div class="field">
+									<label for="f-email"
+										><span data-i18n="form.email">Email</span> <span class="req" aria-hidden="true">*</span></label>
+									<input id="f-email" name="email" type="email" autocomplete="email" required maxlength="160" >
+									<p class="field__error" id="f-email-err"></p>
+								</div>
+								<div class="field">
+									<label for="f-org" data-i18n="form.org">Company or organisation</label>
+									<input id="f-org" name="organization" type="text" autocomplete="organization" maxlength="160" >
+								</div>
+								<div class="field">
+									<label for="f-phone" data-i18n="form.phone">Phone</label>
+									<input id="f-phone" name="phone" type="tel" autocomplete="tel" maxlength="40" >
+								</div>
+								<div class="field">
+									<label for="f-service" data-i18n="form.service">What are you interested in?</label>
+									<select id="f-service" name="service">
+										<option value="event" data-i18n="form.serviceEvent">Turnkey event</option>
+										<option value="license" data-i18n="form.serviceLicense">Licence for your team</option>
+										<option value="custom" data-i18n="form.serviceCustom">Custom</option>
+										<option value="unsure" data-i18n="form.serviceUnsure">Not sure yet, advise me</option>
+									</select>
+								</div>
+								<div class="field">
+									<label for="f-field" data-i18n="form.field">Field of the event</label>
+									<select id="f-field" name="field">
+										<option value="accounting" data-i18n="form.fieldAccounting">Accounting, tax, audit</option>
+										<option value="medicine" data-i18n="form.fieldMedicine">Medicine and pharma</option>
+										<option value="law" data-i18n="form.fieldLaw">Law and public administration</option>
+										<option value="tech" data-i18n="form.fieldTech">Technology and IT</option>
+										<option value="finance" data-i18n="form.fieldFinance">Finance and banking</option>
+										<option value="industry" data-i18n="form.fieldIndustry">Industry and energy</option>
+										<option value="education" data-i18n="form.fieldEducation">Science and education</option>
+										<option value="corporate" data-i18n="form.fieldCorporate">Business event</option>
+										<option value="other" data-i18n="form.fieldOther" selected>Other</option>
+									</select>
+								</div>
+								<div class="field">
+									<label for="f-date" data-i18n="form.date">Event date</label>
+									<input id="f-date" name="eventDate" type="date" >
+								</div>
+								<div class="field">
+									<label for="f-days" data-i18n="form.days">Duration</label>
+									<select id="f-days" name="duration">
+										<option value="1" data-i18n="form.days1">1 day</option>
+										<option value="2" data-i18n="form.days2">2 days</option>
+										<option value="3+" data-i18n="form.days3">3 days or more</option>
+										<option value="series" data-i18n="form.daysSeries">Several events a year</option>
+									</select>
+								</div>
+								<div class="field">
+									<label for="f-people" data-i18n="form.people">Expected number of attendees</label>
+									<input id="f-people" name="attendees" type="number" min="1" max="100000" inputmode="numeric" >
+								</div>
+								<div class="field">
+									<label for="f-rooms" data-i18n="form.rooms">Number of rooms</label>
+									<input id="f-rooms" name="rooms" type="number" min="1" max="100" inputmode="numeric" >
+								</div>
+							</div>
+
+							<fieldset class="field field--group">
+								<legend data-i18n="form.format">Format</legend>
+								<div class="pills">
+									<label class="pill"
+										><input type="radio" name="format" value="onsite" checked ><span data-i18n="form.formatOnsite"
+											>In the room</span></label>
+									<label class="pill"
+										><input type="radio" name="format" value="hybrid" ><span data-i18n="form.formatHybrid"
+											>Hybrid</span></label>
+									<label class="pill"
+										><input type="radio" name="format" value="online" ><span data-i18n="form.formatOnline"
+											>Online (Zoom)</span></label>
+								</div>
+							</fieldset>
+
+							<fieldset class="field field--group">
+								<legend data-i18n="form.langs">Caption languages</legend>
+								<div class="pills">
+									<label class="pill"
+										><input type="checkbox" name="languages" value="SL" checked ><span>SL</span></label>
+									<label class="pill"
+										><input type="checkbox" name="languages" value="EN" checked ><span>EN</span></label>
+									<label class="pill"><input type="checkbox" name="languages" value="DE" ><span>DE</span></label>
+									<label class="pill"><input type="checkbox" name="languages" value="IT" ><span>IT</span></label>
+									<label class="pill"><input type="checkbox" name="languages" value="FR" ><span>FR</span></label>
+									<label class="pill"><input type="checkbox" name="languages" value="HR" ><span>HR</span></label>
+									<label class="pill"><input type="checkbox" name="languages" value="SR" ><span>SR</span></label>
+								</div>
+								<input class="field__other" id="f-otherlangs" name="otherLanguages" type="text" maxlength="200" placeholder="Other languages, e.g. Ukrainian, Spanish …" aria-label="Other languages" data-i18n-attr="placeholder:form.otherLangsPh;aria-label:form.otherLangs">
+							</fieldset>
+
+							<div class="field">
+								<label for="f-msg"
+									><span data-i18n="form.message">Message</span> <span class="req" aria-hidden="true">*</span></label>
+								<textarea id="f-msg" name="message" rows="5" required maxlength="4000" placeholder="Topic of the event, venue, the speakers’ languages, special wishes …" data-i18n-attr="placeholder:form.messagePh"></textarea>
+								<p class="field__error" id="f-msg-err"></p>
+							</div>
+
+							<label class="consent">
+								<input type="checkbox" name="consent" id="f-consent" required >
+								<span data-i18n-html="form.consent"
+									>I agree that the details in this form are used to reply to my inquiry. More in the <a href="./zasebnost.html">privacy policy</a>.</span>
+							</label>
+							<p class="field__error" id="f-consent-err"></p>
+
+							<!-- Honeypot for bots: hidden from people and screen readers. -->
+							<input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" >
+
+							<div class="form__footer">
+								<button class="btn btn--primary btn--lg" type="submit" id="f-submit">
+									<span class="btn__label" data-i18n="form.submit">Send inquiry</span>
+									<span class="spinner" aria-hidden="true"></span>
+								</button>
+								<p class="form__status" id="f-status" role="status" aria-live="polite"></p>
+							</div>
+						</form>
+
+						<div class="success glass" id="f-success" hidden tabindex="-1">
+							<div class="success__mark" aria-hidden="true">
+								<svg viewBox="0 0 52 52">
+									<circle cx="26" cy="26" r="24" ></circle>
+									<path d="m15 27 7 7 15-16" ></path>
+								</svg>
+							</div>
+							<h3 data-i18n="form.successTitle">Thank you! Your inquiry has been sent.</h3>
+							<p data-i18n="form.successText">We will reply to the email address you entered. If it is urgent, feel free to write again.</p>
+							<button class="btn btn--ghost" type="button" id="f-again" data-i18n="form.again">Send another inquiry</button>
+						</div>
+					</div>
+					<div class="split__visual" aria-hidden="true"></div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<div class="container footer__inner">
+				<div class="footer__brand">
+					<span class="brand__name">Exalyte<span>Live</span></span>
+					<p data-i18n="footer.tag">Live captions and interpreting in 85 languages.</p>
+				</div>
+				<nav class="footer__links" aria-label="Footer" data-i18n-attr="aria-label:footer.label">
+					<a href="#podrocja" data-i18n="nav.fields">Fields</a>
+					<a href="#moduli" data-i18n="nav.modules">Modules</a>
+					<a href="#paketi" data-i18n="nav.plans">Services</a>
+					<a href="#povprasevanje" data-i18n="nav.cta">Get a quote</a>
+					<a href="./zasebnost.html" data-i18n="footer.privacy">Privacy</a>
+				</nav>
+				<p class="footer__copy">© <span id="year">2026</span> ExalyteLive</p>
+			</div>
+		</footer>
+
+	</body>
+</html>

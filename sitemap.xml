@@ -4,9 +4,36 @@
 		<loc>https://tileninter.github.io/exalytelive-website-site/</loc>
 		<lastmod>2026-11-06</lastmod>
 		<xhtml:link rel="alternate" hreflang="sl" href="https://tileninter.github.io/exalytelive-website-site/"/>
-		<xhtml:link rel="alternate" hreflang="en" href="https://tileninter.github.io/exalytelive-website-site/?lang=en"/>
-		<xhtml:link rel="alternate" hreflang="de" href="https://tileninter.github.io/exalytelive-website-site/?lang=de"/>
-		<xhtml:link rel="alternate" hreflang="fr" href="https://tileninter.github.io/exalytelive-website-site/?lang=fr"/>
+		<xhtml:link rel="alternate" hreflang="en" href="https://tileninter.github.io/exalytelive-website-site/en/"/>
+		<xhtml:link rel="alternate" hreflang="de" href="https://tileninter.github.io/exalytelive-website-site/de/"/>
+		<xhtml:link rel="alternate" hreflang="fr" href="https://tileninter.github.io/exalytelive-website-site/fr/"/>
+		<xhtml:link rel="alternate" hreflang="x-default" href="https://tileninter.github.io/exalytelive-website-site/"/>
+	</url>
+	<url>
+		<loc>https://tileninter.github.io/exalytelive-website-site/en/</loc>
+		<lastmod>2026-11-06</lastmod>
+		<xhtml:link rel="alternate" hreflang="sl" href="https://tileninter.github.io/exalytelive-website-site/"/>
+		<xhtml:link rel="alternate" hreflang="en" href="https://tileninter.github.io/exalytelive-website-site/en/"/>
+		<xhtml:link rel="alternate" hreflang="de" href="https://tileninter.github.io/exalytelive-website-site/de/"/>
+		<xhtml:link rel="alternate" hreflang="fr" href="https://tileninter.github.io/exalytelive-website-site/fr/"/>
+		<xhtml:link rel="alternate" hreflang="x-default" href="https://tileninter.github.io/exalytelive-website-site/"/>
+	</url>
+	<url>
+		<loc>https://tileninter.github.io/exalytelive-website-site/de/</loc>
+		<lastmod>2026-11-06</lastmod>
+		<xhtml:link rel="alternate" hreflang="sl" href="https://tileninter.github.io/exalytelive-website-site/"/>
+		<xhtml:link rel="alternate" hreflang="en" href="https://tileninter.github.io/exalytelive-website-site/en/"/>
+		<xhtml:link rel="alternate" hreflang="de" href="https://tileninter.github.io/exalytelive-website-site/de/"/>
+		<xhtml:link rel="alternate" hreflang="fr" href="https://tileninter.github.io/exalytelive-website-site/fr/"/>
+		<xhtml:link rel="alternate" hreflang="x-default" href="https://tileninter.github.io/exalytelive-website-site/"/>
+	</url>
+	<url>
+		<loc>https://tileninter.github.io/exalytelive-website-site/fr/</loc>
+		<lastmod>2026-11-06</lastmod>
+		<xhtml:link rel="alternate" hreflang="sl" href="https://tileninter.github.io/exalytelive-website-site/"/>
+		<xhtml:link rel="alternate" hreflang="en" href="https://tileninter.github.io/exalytelive-website-site/en/"/>
+		<xhtml:link rel="alternate" hreflang="de" href="https://tileninter.github.io/exalytelive-website-site/de/"/>
+		<xhtml:link rel="alternate" hreflang="fr" href="https://tileninter.github.io/exalytelive-website-site/fr/"/>
 		<xhtml:link rel="alternate" hreflang="x-default" href="https://tileninter.github.io/exalytelive-website-site/"/>
 	</url>
 </urlset>
