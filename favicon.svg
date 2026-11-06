@@ -1,24 +1,35 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
-  <!-- ExalyteLive's mark (a placeholder until the brand's own): an E drawn as three caption
-       lines in three colours, for captions in several languages at once, beside a red dot
-       for live. Regenerate every icon from this file: npx tauri icon src-tauri/icons/source.svg -->
+  <!-- ExalyteLive's mark: an E drawn as three caption lines whose middle line carries on as
+       two sound waves, for live speech becoming captions. Champagne on graphite, the colours
+       of the app itself. The same drawing is BrandMark.svelte inside the app.
+       Copied from the app (src-tauri/icons/source.svg); the PNG icons beside it are made from it. -->
   <defs>
-    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#14233a"/>
-      <stop offset="1" stop-color="#0a1220"/>
+    <linearGradient id="tile" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2a2620"/>
+      <stop offset="0.55" stop-color="#151311"/>
+      <stop offset="1" stop-color="#0b0a09"/>
     </linearGradient>
-    <radialGradient id="glow" cx="0.25" cy="0.2" r="0.9">
-      <stop offset="0" stop-color="#4cc3ff" stop-opacity="0.18"/>
-      <stop offset="0.6" stop-color="#4cc3ff" stop-opacity="0"/>
+    <radialGradient id="glow" cx="0.22" cy="0.16" r="0.95">
+      <stop offset="0" stop-color="#e8c993" stop-opacity="0.22"/>
+      <stop offset="0.55" stop-color="#e8c993" stop-opacity="0"/>
     </radialGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f3dcb4" stop-opacity="0.55"/>
+      <stop offset="0.5" stop-color="#f3dcb4" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#f3dcb4" stop-opacity="0.3"/>
+    </linearGradient>
+    <linearGradient id="ink" x1="0" y1="232" x2="0" y2="792" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fbe9c9"/>
+      <stop offset="0.5" stop-color="#e2c08a"/>
+      <stop offset="1" stop-color="#b98f55"/>
+    </linearGradient>
   </defs>
-  <rect width="1024" height="1024" rx="224" fill="url(#tile)"/>
-  <rect width="1024" height="1024" rx="224" fill="url(#glow)"/>
-  <g stroke-width="96" stroke-linecap="round">
-    <path stroke="#e9eef5" d="M268 260 L268 764"/>
-    <path stroke="#4cc3ff" d="M268 260 L700 260"/>
-    <path stroke="#5ad1a0" d="M268 512 L620 512"/>
-    <path stroke="#ffc14d" d="M268 764 L740 764"/>
+  <rect width="1024" height="1024" rx="232" fill="url(#tile)"/>
+  <rect width="1024" height="1024" rx="232" fill="url(#glow)"/>
+  <rect x="6" y="6" width="1012" height="1012" rx="226" fill="none" stroke="url(#rim)" stroke-width="12"/>
+  <g fill="none" stroke="url(#ink)" stroke-linecap="round">
+    <path stroke-width="100" d="M300 282 V742 M300 282 H630 M300 512 H500 M300 742 H630"/>
+    <path stroke-width="64" d="M615.5 435.0 A115 115 0 0 1 615.5 589.0"/>
+    <path stroke-width="64" d="M701.7 382.6 A215 215 0 0 1 701.7 641.4" stroke-opacity="0.6"/>
   </g>
-  <circle cx="800" cy="512" r="64" fill="#ff4d5e"/>
 </svg>
