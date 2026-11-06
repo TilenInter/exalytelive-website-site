@@ -91,9 +91,9 @@
 		}
 	]
 }</script>
-		<script type="module" crossorigin src="../assets/main-CDxLCqsU.js"></script>
-		<link rel="modulepreload" crossorigin href="../assets/i18n-vopoKDX9.js">
-		<link rel="stylesheet" crossorigin href="../assets/i18n-BCPMOhFt.css">
+		<script type="module" crossorigin src="../assets/main-Dvfy3AwQ.js"></script>
+		<link rel="modulepreload" crossorigin href="../assets/i18n-DUXG9yKt.js">
+		<link rel="stylesheet" crossorigin href="../assets/i18n-vpoCZqCj.css">
 		<link rel="stylesheet" crossorigin href="../assets/main-DVCAyn8-.css">
 	</head>
 	<body data-page="home">
@@ -857,6 +857,14 @@
 						</noscript>
 						<!-- POST, so that even without scripts nothing typed here ends up in an address. -->
 						<form class="form glass reveal" id="inquiry" method="post" novalidate>
+							<p class="form__draft" id="f-draft" hidden>
+								<span data-i18n="form.draftRestored">Wir haben Ihren begonnenen Entwurf wiederhergestellt.</span>
+								<button class="link-btn" type="button" id="f-draft-clear" data-i18n="form.draftClear">Formular leeren</button>
+							</p>
+
+							<h3 class="form__step">
+								<span class="form__num" aria-hidden="true">1</span><span data-i18n="form.stepYou">Über Sie</span>
+							</h3>
 							<div class="form__grid">
 								<div class="field">
 									<label for="f-name"
@@ -879,6 +887,12 @@
 									<label for="f-phone" data-i18n="form.phone">Telefon</label>
 									<input id="f-phone" name="phone" type="tel" autocomplete="tel" maxlength="40" >
 								</div>
+							</div>
+
+							<h3 class="form__step">
+								<span class="form__num" aria-hidden="true">2</span><span data-i18n="form.stepEvent">Die Veranstaltung</span>
+							</h3>
+							<div class="form__grid">
 								<div class="field">
 									<label for="f-service" data-i18n="form.service">Was interessiert Sie?</label>
 									<select id="f-service" name="service">
@@ -891,6 +905,7 @@
 								<div class="field">
 									<label for="f-field" data-i18n="form.field">Fachgebiet der Veranstaltung</label>
 									<select id="f-field" name="field">
+										<option value="" data-i18n="form.fieldPick" selected>Bitte wählen …</option>
 										<option value="accounting" data-i18n="form.fieldAccounting">Rechnungswesen, Steuern, Wirtschaftsprüfung</option>
 										<option value="medicine" data-i18n="form.fieldMedicine">Medizin und Pharma</option>
 										<option value="law" data-i18n="form.fieldLaw">Recht und öffentliche Verwaltung</option>
@@ -899,14 +914,19 @@
 										<option value="industry" data-i18n="form.fieldIndustry">Industrie und Energie</option>
 										<option value="education" data-i18n="form.fieldEducation">Wissenschaft und Bildung</option>
 										<option value="corporate" data-i18n="form.fieldCorporate">Firmenveranstaltung</option>
-										<option value="other" data-i18n="form.fieldOther" selected>Sonstiges</option>
+										<option value="other" data-i18n="form.fieldOther">Sonstiges</option>
 									</select>
 								</div>
-								<div class="field">
+								<div class="field field--wide" data-when="field:other" hidden>
+									<label for="f-fieldother" data-i18n="form.fieldOtherLabel">Welches Fachgebiet?</label>
+									<input id="f-fieldother" name="fieldOther" type="text" maxlength="120" placeholder="z. B. Kardiologie, Seerecht" data-i18n-attr="placeholder:form.fieldOtherPh">
+								</div>
+								<div class="field" data-unless="service:license">
 									<label for="f-date" data-i18n="form.date">Datum der Veranstaltung</label>
 									<input id="f-date" name="eventDate" type="date" >
+									<p class="field__hint" data-when="duration:series" hidden data-i18n="form.seriesHint">Bei mehreren Veranstaltungen das Datum der ersten eintragen.</p>
 								</div>
-								<div class="field">
+								<div class="field" data-unless="service:license">
 									<label for="f-days" data-i18n="form.days">Dauer</label>
 									<select id="f-days" name="duration">
 										<option value="1" data-i18n="form.days1">1 Tag</option>
@@ -915,17 +935,17 @@
 										<option value="series" data-i18n="form.daysSeries">Mehrere Veranstaltungen pro Jahr</option>
 									</select>
 								</div>
-								<div class="field">
+								<div class="field" data-unless="service:license">
 									<label for="f-people" data-i18n="form.people">Erwartete Teilnehmerzahl</label>
 									<input id="f-people" name="attendees" type="number" min="1" max="100000" inputmode="numeric" >
 								</div>
-								<div class="field">
+								<div class="field" data-when="format:onsite,hybrid" data-unless="service:license">
 									<label for="f-rooms" data-i18n="form.rooms">Anzahl der Säle</label>
 									<input id="f-rooms" name="rooms" type="number" min="1" max="100" inputmode="numeric" >
 								</div>
 							</div>
 
-							<fieldset class="field field--group">
+							<fieldset class="field field--group" data-unless="service:license">
 								<legend data-i18n="form.format">Format</legend>
 								<div class="pills">
 									<label class="pill"
@@ -938,29 +958,46 @@
 										><input type="radio" name="format" value="online" ><span data-i18n="form.formatOnline"
 											>Online (Zoom)</span></label>
 								</div>
+								<p class="field__hint" data-when="format:online" hidden data-i18n="form.onlineHint">Die Untertitel können auch in der Untertitelleiste von Zoom laufen.</p>
 							</fieldset>
 
-							<fieldset class="field field--group">
-								<legend data-i18n="form.langs">Untertitelsprachen</legend>
-								<div class="pills">
-									<label class="pill"
-										><input type="checkbox" name="languages" value="SL" checked ><span>SL</span></label>
-									<label class="pill"
-										><input type="checkbox" name="languages" value="EN" checked ><span>EN</span></label>
-									<label class="pill"><input type="checkbox" name="languages" value="DE" ><span>DE</span></label>
-									<label class="pill"><input type="checkbox" name="languages" value="IT" ><span>IT</span></label>
-									<label class="pill"><input type="checkbox" name="languages" value="FR" ><span>FR</span></label>
-									<label class="pill"><input type="checkbox" name="languages" value="HR" ><span>HR</span></label>
-									<label class="pill"><input type="checkbox" name="languages" value="SR" ><span>SR</span></label>
+							<h3 class="form__step">
+								<span class="form__num" aria-hidden="true">3</span><span data-i18n="form.stepLangs">Sprachen</span>
+							</h3>
+							<fieldset class="field field--group langpick" data-name="speakerLanguages" data-default="sl">
+								<legend data-i18n="form.speakerLangs">Sprachen der Redner</legend>
+								<p class="field__hint" id="f-speakers-hint" data-i18n="form.speakerLangsHint">In welchen Sprachen wird gesprochen? Der Dolmetscher erkennt die Sprache selbst, auch wenn ein Redner wechselt.</p>
+								<div class="langpick__picked"></div>
+								<div class="langpick__quick" role="group" aria-label="Häufige Sprachen" data-i18n-attr="aria-label:form.langQuick"></div>
+								<div class="langpick__box">
+									<input class="langpick__search" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-describedby="f-speakers-hint" autocomplete="off" enterkeyhint="done" placeholder="Sprache suchen …" aria-label="Sprache der Redner suchen" data-i18n-attr="placeholder:form.langSearch;aria-label:form.speakerLangsSearch">
+									<ul class="langpick__list" role="listbox" aria-multiselectable="true" hidden></ul>
 								</div>
-								<input class="field__other" id="f-otherlangs" name="otherLanguages" type="text" maxlength="200" placeholder="Weitere Sprachen, z. B. Ukrainisch, Spanisch …" aria-label="Weitere Sprachen" data-i18n-attr="placeholder:form.otherLangsPh;aria-label:form.otherLangs">
+								<p class="langpick__note"></p>
+								<p class="sr-only langpick__live" aria-live="polite"></p>
 							</fieldset>
 
+							<fieldset class="field field--group langpick" data-name="languages" data-default="sl,en">
+								<legend data-i18n="form.langs">Untertitelsprachen</legend>
+								<p class="field__hint" id="f-langs-hint" data-i18n="form.langsHint">Wählen Sie beliebig viele der 85 Sprachen. Auf demselben Bildschirm erscheinen bis zu vier gleichzeitig.</p>
+								<div class="langpick__picked"></div>
+								<div class="langpick__quick" role="group" aria-label="Häufige Sprachen" data-i18n-attr="aria-label:form.langQuick"></div>
+								<div class="langpick__box">
+									<input class="langpick__search" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-describedby="f-langs-hint" autocomplete="off" enterkeyhint="done" placeholder="Sprache suchen …" aria-label="Untertitelsprache suchen" data-i18n-attr="placeholder:form.langSearch;aria-label:form.langsSearch">
+									<ul class="langpick__list" role="listbox" aria-multiselectable="true" hidden></ul>
+								</div>
+								<p class="langpick__note"></p>
+								<p class="sr-only langpick__live" aria-live="polite"></p>
+							</fieldset>
+
+							<h3 class="form__step">
+								<span class="form__num" aria-hidden="true">4</span><span data-i18n="form.stepMore">Noch etwas?</span>
+							</h3>
 							<div class="field">
 								<label for="f-msg"
-									><span data-i18n="form.message">Nachricht</span> <span class="req" aria-hidden="true">*</span></label>
-								<textarea id="f-msg" name="message" rows="5" required maxlength="4000" placeholder="Thema der Veranstaltung, Ort, Sprachen der Redner, besondere Wünsche …" data-i18n-attr="placeholder:form.messagePh"></textarea>
-								<p class="field__error" id="f-msg-err"></p>
+									><span data-i18n="form.message">Nachricht</span>
+									<span class="opt" data-i18n="form.optional">optional</span></label>
+								<textarea id="f-msg" name="message" rows="4" maxlength="4000" placeholder="Thema, Ort, besondere Wünsche …" data-i18n-attr="placeholder:form.messagePh"></textarea>
 							</div>
 
 							<label class="consent">
@@ -972,6 +1009,8 @@
 
 							<!-- Honeypot for bots: hidden from people and screen readers. -->
 							<input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" >
+
+							<p class="form__summary" id="f-summary"></p>
 
 							<div class="form__footer">
 								<button class="btn btn--primary btn--lg" type="submit" id="f-submit">
