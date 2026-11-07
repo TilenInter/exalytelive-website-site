@@ -91,9 +91,9 @@
 		}
 	]
 }</script>
-		<script type="module" crossorigin src="../assets/main-DbcLgQcj.js"></script>
-		<link rel="modulepreload" crossorigin href="../assets/i18n-CgAOG1C6.js">
-		<link rel="stylesheet" crossorigin href="../assets/i18n-vpoCZqCj.css">
+		<script type="module" crossorigin src="../assets/main-B8m7fmTV.js"></script>
+		<link rel="modulepreload" crossorigin href="../assets/i18n-D9zUEIJ-.js">
+		<link rel="stylesheet" crossorigin href="../assets/i18n-DrBZSyvW.css">
 		<link rel="stylesheet" crossorigin href="../assets/main-DVCAyn8-.css">
 	</head>
 	<body data-page="home">
@@ -336,46 +336,91 @@
 				</div>
 			</section>
 
-			<!-- HOW ------------------------------------------------------------------------------->
+			<!-- HOW IT WORKS: a conference hall in four beats as you scroll ------------------------->
 			<section class="section how" id="kako">
-				<div class="container split split--story">
-					<div class="split__copy">
-						<header class="section__head reveal">
-							<p class="kicker" data-i18n="how.kicker">How it works</p>
-							<h2 data-i18n="how.title">From a voice to four lines of captions</h2>
-							<p data-i18n="how.lead">One transcript, many languages: every translation comes from the same sentence, so they agree with each other and extra languages barely add to the cost.</p>
-						</header>
-						<ol class="steps" id="steps">
-							<li class="step-wrap" data-shape="1" data-side="right">
-								<div class="step glass reveal">
-									<span class="step__num">01</span>
-									<div>
-										<h3 data-i18n="how.s1.title">Sound from the room and online</h3>
-										<p data-i18n="how.s1.text">A microphone in the room, the computer’s own audio or the sound of a single app such as Zoom. Captions tell the speaker in the room from the one joining remotely.</p>
-									</div>
-								</div>
-							</li>
-							<li class="step-wrap" data-shape="0" data-side="right">
-								<div class="step glass reveal">
-									<span class="step__num">02</span>
-									<div>
-										<h3 data-i18n="how.s2.title">A transcript that knows the subject</h3>
-										<p data-i18n="how.s2.text">The speech model writes as people talk and knows the event’s description, the speakers’ names and the terms in the module. At each pause it repairs misheard words and drops fillers.</p>
-									</div>
-								</div>
-							</li>
-							<li class="step-wrap" data-shape="2" data-side="right">
-								<div class="step glass reveal">
-									<span class="step__num">03</span>
-									<div>
-										<h3 data-i18n="how.s3.title">Up to four languages at once</h3>
-										<p data-i18n="how.s3.text">The same transcript becomes captions in up to four languages: in a transparent overlay above the slides, on a projector, an LED wall or in Zoom’s caption bar.</p>
-									</div>
-								</div>
-							</li>
-						</ol>
+				<div class="container">
+					<header class="section__head section__head--center reveal">
+						<p class="kicker" data-i18n="how.kicker">How it works</p>
+						<h2 data-i18n="how.title">A room that understands every word</h2>
+						<p data-i18n="how.lead">Scroll through the event and see what happens when ExalyteLive is in the room.</p>
+					</header>
+				</div>
+				<div class="hall" id="hall">
+					<div class="hall__stage" aria-hidden="true">
+						<canvas class="hall__gl"></canvas>
+						<div class="hall__scene">
+							<picture>
+								<source media="(max-aspect-ratio: 4/5)" srcset="../hall/back-portrait.webp">
+								<img src="../hall/back.webp" data-depth="../hall/back-depth.webp" data-portrait="../hall/back-portrait.webp" data-portrait-depth="../hall/back-portrait-depth.webp" alt width="1536" height="1024" loading="lazy" decoding="async">
+							</picture>
+							<div 								class="hall__captions"
+								data-quad="459,334 1135,334 1135,494 459,494"
+								data-quad-portrait="286,464 877,464 877,674 286,674"
+							></div>
+						</div>
+						<div class="hall__scene">
+							<picture>
+								<source media="(max-aspect-ratio: 4/5)" srcset="../hall/screen-portrait.webp">
+								<img src="../hall/screen.webp" data-depth="../hall/screen-depth.webp" data-portrait="../hall/screen-portrait.webp" data-portrait-depth="../hall/screen-portrait-depth.webp" alt width="1536" height="1024" loading="lazy" decoding="async">
+							</picture>
+							<div 								class="hall__captions"
+								data-quad="387,389 1312,348 1314,574 386,579"
+								data-quad-portrait="228,513 932,480 932,740 228,743"
+							></div>
+						</div>
+						<div class="hall__scene">
+							<picture>
+								<source media="(max-aspect-ratio: 4/5)" srcset="../hall/audience-portrait.webp">
+								<img src="../hall/audience.webp" data-depth="../hall/audience-depth.webp" data-portrait="../hall/audience-portrait.webp" data-portrait-depth="../hall/audience-portrait-depth.webp" alt width="1536" height="1024" loading="lazy" decoding="async">
+							</picture>
+							<!-- What they read: the same captions, as a panel. -->
+							<div class="hall__captions"></div>
+						</div>
+						<div class="hall__scene">
+							<picture>
+								<source media="(max-aspect-ratio: 4/5)" srcset="../hall/applause-portrait.webp">
+								<img src="../hall/applause.webp" data-depth="../hall/applause-depth.webp" data-portrait="../hall/applause-portrait.webp" data-portrait-depth="../hall/applause-portrait-depth.webp" alt width="1536" height="1024" loading="lazy" decoding="async">
+							</picture>
+						</div>
 					</div>
-					<div class="split__visual" aria-hidden="true"></div>
+					<ol class="hall__beats" id="steps">
+						<li class="hall__beat">
+							<div class="step glass">
+								<span class="step__num">01</span>
+								<div>
+									<h3 data-i18n="how.b1.title">The speaker talks as always</h3>
+									<p data-i18n="how.b1.text">No script and no special preparation. They speak in their own language and can even switch mid-talk.</p>
+								</div>
+							</div>
+						</li>
+						<li class="hall__beat">
+							<div class="step glass">
+								<span class="step__num">02</span>
+								<div>
+									<h3 data-i18n="how.b2.title">Captions follow live</h3>
+									<p data-i18n="how.b2.text">They appear on the screen in about a second, with your field’s terms and names spelled right.</p>
+								</div>
+							</div>
+						</li>
+						<li class="hall__beat">
+							<div class="step glass">
+								<span class="step__num">03</span>
+								<div>
+									<h3 data-i18n="how.b3.title">Everyone follows in their language</h3>
+									<p data-i18n="how.b3.text">Up to four languages at once on the same screen. Guests from abroad catch every figure and every term too.</p>
+								</div>
+							</div>
+						</li>
+						<li class="hall__beat">
+							<div class="step glass">
+								<span class="step__num">04</span>
+								<div>
+									<h3 data-i18n="how.b4.title">The room understands. And applauds.</h3>
+									<p data-i18n="how.b4.text">After the event you also get the full transcript for minutes, publication and recordings.</p>
+								</div>
+							</div>
+						</li>
+					</ol>
 				</div>
 			</section>
 

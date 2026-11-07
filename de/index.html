@@ -91,9 +91,9 @@
 		}
 	]
 }</script>
-		<script type="module" crossorigin src="../assets/main-DbcLgQcj.js"></script>
-		<link rel="modulepreload" crossorigin href="../assets/i18n-CgAOG1C6.js">
-		<link rel="stylesheet" crossorigin href="../assets/i18n-vpoCZqCj.css">
+		<script type="module" crossorigin src="../assets/main-B8m7fmTV.js"></script>
+		<link rel="modulepreload" crossorigin href="../assets/i18n-D9zUEIJ-.js">
+		<link rel="stylesheet" crossorigin href="../assets/i18n-DrBZSyvW.css">
 		<link rel="stylesheet" crossorigin href="../assets/main-DVCAyn8-.css">
 	</head>
 	<body data-page="home">
@@ -336,46 +336,91 @@
 				</div>
 			</section>
 
-			<!-- HOW ------------------------------------------------------------------------------->
+			<!-- HOW IT WORKS: a conference hall in four beats as you scroll ------------------------->
 			<section class="section how" id="kako">
-				<div class="container split split--story">
-					<div class="split__copy">
-						<header class="section__head reveal">
-							<p class="kicker" data-i18n="how.kicker">So funktioniert es</p>
-							<h2 data-i18n="how.title">Von der Stimme zu vier Untertitelzeilen</h2>
-							<p data-i18n="how.lead">Ein Transkript, viele Sprachen: Alle Übersetzungen entstehen aus demselben Satz, passen also zueinander, und zusätzliche Sprachen kosten kaum mehr.</p>
-						</header>
-						<ol class="steps" id="steps">
-							<li class="step-wrap" data-shape="1" data-side="right">
-								<div class="step glass reveal">
-									<span class="step__num">01</span>
-									<div>
-										<h3 data-i18n="how.s1.title">Ton aus dem Saal und online</h3>
-										<p data-i18n="how.s1.text">Ein Mikrofon im Saal, der Systemton des Computers oder der Ton einer einzelnen App wie Zoom. Die Untertitel unterscheiden den Redner im Saal von dem, der online zugeschaltet ist.</p>
-									</div>
-								</div>
-							</li>
-							<li class="step-wrap" data-shape="0" data-side="right">
-								<div class="step glass reveal">
-									<span class="step__num">02</span>
-									<div>
-										<h3 data-i18n="how.s2.title">Ein Transkript, das das Thema kennt</h3>
-										<p data-i18n="how.s2.text">Das Sprachmodell schreibt mit, während gesprochen wird, und kennt die Beschreibung der Veranstaltung, die Namen der Redner und die Begriffe aus dem Modul. In jeder Pause korrigiert es falsch verstandene Wörter und entfernt Füllwörter.</p>
-									</div>
-								</div>
-							</li>
-							<li class="step-wrap" data-shape="2" data-side="right">
-								<div class="step glass reveal">
-									<span class="step__num">03</span>
-									<div>
-										<h3 data-i18n="how.s3.title">Bis zu vier Sprachen gleichzeitig</h3>
-										<p data-i18n="how.s3.text">Aus demselben Transkript entstehen Untertitel in bis zu vier Sprachen: in einer transparenten Ebene über den Folien, auf einem Projektor, einer LED-Wand oder in der Untertitelleiste von Zoom.</p>
-									</div>
-								</div>
-							</li>
-						</ol>
+				<div class="container">
+					<header class="section__head section__head--center reveal">
+						<p class="kicker" data-i18n="how.kicker">So funktioniert es</p>
+						<h2 data-i18n="how.title">Ein Saal, der jedes Wort versteht</h2>
+						<p data-i18n="how.lead">Scrollen Sie durch die Veranstaltung und sehen Sie, was passiert, wenn ExalyteLive im Saal ist.</p>
+					</header>
+				</div>
+				<div class="hall" id="hall">
+					<div class="hall__stage" aria-hidden="true">
+						<canvas class="hall__gl"></canvas>
+						<div class="hall__scene">
+							<picture>
+								<source media="(max-aspect-ratio: 4/5)" srcset="../hall/back-portrait.webp">
+								<img src="../hall/back.webp" data-depth="../hall/back-depth.webp" data-portrait="../hall/back-portrait.webp" data-portrait-depth="../hall/back-portrait-depth.webp" alt width="1536" height="1024" loading="lazy" decoding="async">
+							</picture>
+							<div 								class="hall__captions"
+								data-quad="459,334 1135,334 1135,494 459,494"
+								data-quad-portrait="286,464 877,464 877,674 286,674"
+							></div>
+						</div>
+						<div class="hall__scene">
+							<picture>
+								<source media="(max-aspect-ratio: 4/5)" srcset="../hall/screen-portrait.webp">
+								<img src="../hall/screen.webp" data-depth="../hall/screen-depth.webp" data-portrait="../hall/screen-portrait.webp" data-portrait-depth="../hall/screen-portrait-depth.webp" alt width="1536" height="1024" loading="lazy" decoding="async">
+							</picture>
+							<div 								class="hall__captions"
+								data-quad="387,389 1312,348 1314,574 386,579"
+								data-quad-portrait="228,513 932,480 932,740 228,743"
+							></div>
+						</div>
+						<div class="hall__scene">
+							<picture>
+								<source media="(max-aspect-ratio: 4/5)" srcset="../hall/audience-portrait.webp">
+								<img src="../hall/audience.webp" data-depth="../hall/audience-depth.webp" data-portrait="../hall/audience-portrait.webp" data-portrait-depth="../hall/audience-portrait-depth.webp" alt width="1536" height="1024" loading="lazy" decoding="async">
+							</picture>
+							<!-- What they read: the same captions, as a panel. -->
+							<div class="hall__captions"></div>
+						</div>
+						<div class="hall__scene">
+							<picture>
+								<source media="(max-aspect-ratio: 4/5)" srcset="../hall/applause-portrait.webp">
+								<img src="../hall/applause.webp" data-depth="../hall/applause-depth.webp" data-portrait="../hall/applause-portrait.webp" data-portrait-depth="../hall/applause-portrait-depth.webp" alt width="1536" height="1024" loading="lazy" decoding="async">
+							</picture>
+						</div>
 					</div>
-					<div class="split__visual" aria-hidden="true"></div>
+					<ol class="hall__beats" id="steps">
+						<li class="hall__beat">
+							<div class="step glass">
+								<span class="step__num">01</span>
+								<div>
+									<h3 data-i18n="how.b1.title">Der Redner spricht wie immer</h3>
+									<p data-i18n="how.b1.text">Ohne Skript und ohne besondere Vorbereitung. In der eigenen Sprache, auf Wunsch auch mit Wechsel mitten im Vortrag.</p>
+								</div>
+							</div>
+						</li>
+						<li class="hall__beat">
+							<div class="step glass">
+								<span class="step__num">02</span>
+								<div>
+									<h3 data-i18n="how.b2.title">Untertitel laufen live mit</h3>
+									<p data-i18n="how.b2.text">Sie erscheinen in etwa einer Sekunde auf der Leinwand, mit den Fachbegriffen Ihres Gebiets und richtig geschriebenen Namen.</p>
+								</div>
+							</div>
+						</li>
+						<li class="hall__beat">
+							<div class="step glass">
+								<span class="step__num">03</span>
+								<div>
+									<h3 data-i18n="how.b3.title">Alle folgen in ihrer Sprache</h3>
+									<p data-i18n="how.b3.text">Bis zu vier Sprachen gleichzeitig auf demselben Bildschirm. Auch Gäste aus dem Ausland verstehen jede Zahl und jeden Begriff.</p>
+								</div>
+							</div>
+						</li>
+						<li class="hall__beat">
+							<div class="step glass">
+								<span class="step__num">04</span>
+								<div>
+									<h3 data-i18n="how.b4.title">Der Saal versteht. Und applaudiert.</h3>
+									<p data-i18n="how.b4.text">Nach der Veranstaltung erhalten Sie das vollständige Transkript für Protokoll, Veröffentlichung und Aufzeichnungen.</p>
+								</div>
+							</div>
+						</li>
+					</ol>
 				</div>
 			</section>
 
